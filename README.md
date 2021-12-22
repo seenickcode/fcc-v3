@@ -1,3 +1,9 @@
+pnpm create astro my-astro-project -- --template starter
+pnpm install
+follow https://prettier.io/docs/en/install.html
+pnpm install -D tailwindcss
+see tailwind instructions here https://docs.astro.build/guides/styling/
+
 # Astro Starter Kit: Blog
 
 ```
@@ -43,7 +49,7 @@ Any static assets, like images, can be placed in the `public/` directory.
 All commands are run from the root of the project, from a terminal:
 
 | Command           | Action                                       |
-|:----------------  |:-------------------------------------------- |
+| :---------------- | :------------------------------------------- |
 | `npm install`     | Installs dependencies                        |
 | `npm run dev`     | Starts local dev server at `localhost:3000`  |
 | `npm run build`   | Build your production site to `./dist/`      |
