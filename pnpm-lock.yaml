@@ -2,16 +2,28 @@ lockfileVersion: 5.3
 
 specifiers:
   '@astrojs/renderer-preact': ^0.3.2
+  '@astrojs/renderer-react': ^0.4.0
   astro: ^0.21.13
+  hls.js: ^1.1.2
+  plyr-react: ^3.2.1
   prettier: 2.5.1
   prettier-plugin-astro: ^0.0.11
+  react: ^17.0.2
+  react-dom: ^17.0.2
   tailwindcss: ^3.0.7
+
+dependencies:
+  hls.js: 1.1.2
+  plyr-react: 3.2.1_react-dom@17.0.2+react@17.0.2
 
 devDependencies:
   '@astrojs/renderer-preact': 0.3.2
+  '@astrojs/renderer-react': 0.4.0
   astro: 0.21.13
   prettier: 2.5.1
   prettier-plugin-astro: 0.0.11
+  react: 17.0.2
+  react-dom: 17.0.2_react@17.0.2
   tailwindcss: 3.0.7
 
 packages:
@@ -107,6 +119,17 @@ packages:
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dependencies:
       '@babel/plugin-transform-react-jsx': 7.16.5_@babel+core@7.16.5
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+    transitivePeerDependencies:
+      - '@babel/core'
+    dev: true
+
+  /@astrojs/renderer-react/0.4.0:
+    resolution: {integrity: sha512-4vU2fqRDGdMVYsmM5WgzSA8Wlsmcefa80fQVBHyt1rHZWfW+bOPJVLO7nR6BzixFCoum5PzXD1TraD971O7BLA==}
+    engines: {node: ^14.15.0 || >=16.0.0}
+    dependencies:
+      '@babel/plugin-transform-react-jsx': 7.16.5
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
     transitivePeerDependencies:
@@ -1088,6 +1111,11 @@ packages:
       safe-buffer: 5.1.2
     dev: true
 
+  /core-js/3.20.1:
+    resolution: {integrity: sha512-btdpStYFQScnNVQ5slVcr858KP0YWYjV16eGJQw8Gg7CWtu/2qNvIM3qVRIR3n1pK2R9NNOrTevbvAYxajwEjg==}
+    requiresBuild: true
+    dev: false
+
   /cosmiconfig/7.0.1:
     resolution: {integrity: sha512-a1YWNUV2HwGimB7dU2s1wUMurNKjpx60HxBB6xUM8Re+2s1g1IIfJvFR0/iCF+XHdE0GMTKTuLR32UQff4TEyQ==}
     engines: {node: '>=10'}
@@ -1108,6 +1136,10 @@ packages:
   /csstype/2.6.19:
     resolution: {integrity: sha512-ZVxXaNy28/k3kJg0Fou5MiYpp88j7H9hLZp8PDC3jV0WFjfH5E9xHb56L0W59cPbKbcHXeP4qyT8PrHp8t6LcQ==}
     dev: true
+
+  /custom-event-polyfill/1.0.7:
+    resolution: {integrity: sha512-TDDkd5DkaZxZFM8p+1I3yAlvM3rSr1wbrOliG4yJiwinMZN8z/iGL7BTlDkrJcYTmgUSb4ywVCc3ZaUtOtC76w==}
+    dev: false
 
   /data-uri-to-buffer/4.0.0:
     resolution: {integrity: sha512-Vr3mLBA8qWmcuschSLAOogKgQ/Jwxulv3RNE4FXnYWRGujzrRWQI4m12fQqRkwX06C0KanhLr4hK+GydchZsaA==}
@@ -2231,6 +2263,10 @@ packages:
       space-separated-tokens: 2.0.1
     dev: true
 
+  /hls.js/1.1.2:
+    resolution: {integrity: sha512-ujditC4vvBmZd00RRNfNPLgFVlqEeUX4sAFv5lGhBHuql8iAZodOdlZTD3em/1zo7vyjQp12up/lCVqQk8dvxA==}
+    dev: false
+
   /hosted-git-info/2.8.9:
     resolution: {integrity: sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==}
     dev: true
@@ -2576,6 +2612,10 @@ packages:
   /lines-and-columns/1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
     dev: true
+
+  /loadjs/4.2.0:
+    resolution: {integrity: sha512-AgQGZisAlTPbTEzrHPb6q+NYBMD+DP9uvGSIjSUM5uG+0jG15cb8axWpxuOIqrmQjn6scaaH8JwloiP27b2KXA==}
+    dev: false
 
   /locate-character/2.0.5:
     resolution: {integrity: sha512-n2GmejDXtOPBAZdIiEFy5dJ5N38xBCXLNOtw2WpB9kGh6pnrEuKlwYI+Tkpofc4wDtVXHtoAOJaMRlYG/oYaxg==}
@@ -3368,6 +3408,28 @@ packages:
     engines: {node: '>=8.6'}
     dev: true
 
+  /plyr-react/3.2.1_react-dom@17.0.2+react@17.0.2:
+    resolution: {integrity: sha512-ZXMA+d837mZCkb68oTXso6rH8O+B2+A7t8ux1fdU+kFSUh1NZa1/iuItItFgScmVC6FoO3DNj+FkZP2aikxoKg==}
+    engines: {node: '>=10', npm: '>=6'}
+    peerDependencies:
+      react: ^16.13.0  || ^17.0.0
+      react-dom: ^16.13.0  || ^17.0.0
+    dependencies:
+      plyr: 3.6.12
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+    dev: false
+
+  /plyr/3.6.12:
+    resolution: {integrity: sha512-42WhYpMS/FEyX2unSEvhYtj1RvJgWvOsjZQFDongOQHA4eVzsyr7b06bzVpinMAOVC9e5H7RCbK+6CCAFIl2VQ==}
+    dependencies:
+      core-js: 3.20.1
+      custom-event-polyfill: 1.0.7
+      loadjs: 4.2.0
+      rangetouch: 2.0.1
+      url-polyfill: 1.1.12
+    dev: false
+
   /postcss-js/3.0.3:
     resolution: {integrity: sha512-gWnoWQXKFw65Hk/mi2+WTQTHdPD5UJdDXZmX073EY/B3BWnYjO4F4t0VneTCnCGQ5E5GsCdMkzPaTXwl3r5dJw==}
     engines: {node: '>=10.0'}
@@ -3478,6 +3540,10 @@ packages:
     resolution: {integrity: sha512-Hrgsx+orqoygnmhFbKaHE6c296J+HTAQXoxEF6gNupROmmGJRoyzfG3ccAveqCBrwr/2yxQ5BVd/GTl5agOwSg==}
     engines: {node: '>= 0.6'}
     dev: true
+
+  /rangetouch/2.0.1:
+    resolution: {integrity: sha512-sln+pNSc8NGaHoLzwNBssFSf/rSYkqeBXzX1AtJlkJiUaVSJSbRAWJk+4omsXkN+EJalzkZhWQ3th1m0FpR5xA==}
+    dev: false
 
   /react-dom/17.0.2_react@17.0.2:
     resolution: {integrity: sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA==}
@@ -4282,6 +4348,10 @@ packages:
     resolution: {integrity: sha1-sr9O6FFKrmFltIF4KdIbLvSZBOw=}
     engines: {node: '>= 0.8'}
     dev: true
+
+  /url-polyfill/1.1.12:
+    resolution: {integrity: sha512-mYFmBHCapZjtcNHW0MDq9967t+z4Dmg5CJ0KqysK3+ZbyoNOWQHksGCTWwDhxGXllkWlOc10Xfko6v4a3ucM6A==}
+    dev: false
 
   /util-deprecate/1.0.2:
     resolution: {integrity: sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=}
