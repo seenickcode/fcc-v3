@@ -1,0 +1,49 @@
+{
+  "root": true,
+  "api": {
+    "projectId": "o8uzmguj",
+    "dataset": "staging"
+  },
+  "project": {
+    "name": "felix"
+  },
+  "__experimental_spaces": [
+    {
+      "name": "production",
+      "title": "Prod",
+      "default": true,
+      "api": {
+        "projectId": "o8uzmguj",
+        "dataset": "production"
+      }
+    },
+    {
+      "name": "staging",
+      "title": "Staging",
+      "api": {
+        "projectId": "o8uzmguj",
+        "dataset": "staging"
+      }
+    }
+  ],
+  "plugins": [
+    "@sanity/base",
+    "@sanity/default-layout",
+    "@sanity/default-login",
+    "@sanity/desk-tool",
+    "markdown"
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        "@sanity/vision"
+      ]
+    }
+  },
+  "parts": [
+    {
+      "name": "part:@sanity/base/schema",
+      "path": "./schemas/schema"
+    }
+  ]
+}

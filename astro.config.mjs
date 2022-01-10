@@ -8,7 +8,5 @@
 
 // @ts-check
 export default /** @type {import('astro').AstroUserConfig} */ ({
-  // Enable the Preact renderer to support Preact JSX components.
-  // renderers: ["@astrojs/renderer-preact"],
-  renderers: ["@astrojs/renderer-react"],
+  renderers: ["@astrojs/renderer-react", "@astrojs/renderer-svelte"],
 });

@@ -1,3 +1,9 @@
 {
-  "moduleResolution": "node"
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "module": "es2020",
+    "lib": ["es2020"],
+    "allowSyntheticDefaultImports": true,
+    "types": ["vite/client"]
+  }
 }

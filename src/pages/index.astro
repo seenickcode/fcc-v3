@@ -1,39 +1,37 @@
 ---
 // Component Imports
 import BaseHead from '../components/BaseHead.astro';
-import BlogHeader from '../components/BlogHeader.astro';
-import BlogPostPreview from '../components/BlogPostPreview.astro';
-import Counter from '../components/Counter.tsx'
-import Player from '../components/Player.tsx';
+import DarkModeToggle from '../components/DarkModeToggle.tsx';
+import Logo from '../components/Logo.astro';
+// import BlogList from '../components/BlogList.svelte';
+import BlogList from '../components/BlogList.astro';
 
-interface MarkdownFrontmatter {
-  publishDate: number;
-}
-
-// Component Script:
-// You can write any JavaScript/TypeScript that you'd like here.
-// It will run during the build, but never in the browser.
-// All variables are available to use in the HTML template below.
-let title = 'Example Blog';
-let description = 'The perfect starter for your perfect blog.';
-let permalink = 'https://example.com/';
-
-// Data Fetching: List all Markdown posts in the repo.
-
-let allPosts = await Astro.fetchContent('./posts/*.md');
-allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.publishDate).valueOf());
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
 ---
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} permalink={permalink} />
-    <link rel="stylesheet" href={Astro.resolve('../styles/global.css')} />
-    <link rel="stylesheet" href={Astro.resolve('../styles/blog.css')} />
+    <BaseHead title='The Steady Calendar Course - The Flutter Crash Course' description='' permalink='' />
+    
   </head>
-
   <body>
-    <Player src='https://fluttercrashcourse.global.ssl.fastly.net/videos/285626443/playlist.m3u8' client:only />
+    <div class="flex flex-col">
+      <!-- nav -->
+      <div class="flex flex-row justify-between items-center">
+        <!-- left -->
+        <div><Logo /></div>
+
+        <!-- right -->
+        <div class="flex flex-row items-center space-x-4">
+          <div><DarkModeToggle /></div>
+          <div>item</div>
+          <div>item</div>
+          <div>item</div>
+        </div>
+        
+      </div>
+      <!-- content -->
+      <div class="bg-green-300">
+        <BlogList />
+      </div>
+    </div>
   </body>
 </html>
