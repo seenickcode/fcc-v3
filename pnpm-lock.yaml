@@ -17,6 +17,7 @@ specifiers:
   prettier-plugin-svelte: ^2.5.1
   react: ^17.0.2
   react-dom: ^17.0.2
+  react-hls-player: ^3.0.7
   rollbar: ^2.24.0
   tailwindcss: ^3.0.7
   vite: ^2.7.10
@@ -25,6 +26,7 @@ dependencies:
   '@themesberg/flowbite': 1.2.0
   hls.js: 1.1.2
   plyr-react: 3.2.1_react-dom@17.0.2+react@17.0.2
+  react-hls-player: 3.0.7_react-dom@17.0.2+react@17.0.2
 
 devDependencies:
   '@astrojs/renderer-preact': 0.3.2
@@ -2118,6 +2120,10 @@ packages:
     engines: {node: '>= 0.6'}
     dev: true
 
+  /eventemitter3/4.0.7:
+    resolution: {integrity: sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==}
+    dev: false
+
   /eventsource/1.1.0:
     resolution: {integrity: sha512-VSJjT5oCNrFvCS6igjzPAt5hBzQ2qPBFIbJ03zLI9SE0mxwZpMw6BfJrbFHm1a141AavMEB8JHmBhWAd66PfCg==}
     engines: {node: '>=0.12.0'}
@@ -2521,6 +2527,13 @@ packages:
       property-information: 6.1.1
       space-separated-tokens: 2.0.1
     dev: true
+
+  /hls.js/0.14.17:
+    resolution: {integrity: sha512-25A7+m6qqp6UVkuzUQ//VVh2EEOPYlOBg32ypr34bcPO7liBMOkKFvbjbCBfiPAOTA/7BSx1Dujft3Th57WyFg==}
+    dependencies:
+      eventemitter3: 4.0.7
+      url-toolkit: 2.2.4
+    dev: false
 
   /hls.js/1.1.2:
     resolution: {integrity: sha512-ujditC4vvBmZd00RRNfNPLgFVlqEeUX4sAFv5lGhBHuql8iAZodOdlZTD3em/1zo7vyjQp12up/lCVqQk8dvxA==}
@@ -3928,6 +3941,17 @@ packages:
       scheduler: 0.20.2
     dev: true
 
+  /react-hls-player/3.0.7_react-dom@17.0.2+react@17.0.2:
+    resolution: {integrity: sha512-i5QWNyLmaUhV/mgnpljRJT0CBfJnylClV/bne8aiXO3ZqU0+D3U/jtTDwdXM4i5qHhyFy9lemyZ179IgadKd0Q==}
+    peerDependencies:
+      react: ^16.13.1
+      react-dom: ^16.13.1
+    dependencies:
+      hls.js: 0.14.17
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+    dev: false
+
   /react/17.0.2:
     resolution: {integrity: sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==}
     engines: {node: '>=0.10.0'}
@@ -4869,6 +4893,10 @@ packages:
 
   /url-polyfill/1.1.12:
     resolution: {integrity: sha512-mYFmBHCapZjtcNHW0MDq9967t+z4Dmg5CJ0KqysK3+ZbyoNOWQHksGCTWwDhxGXllkWlOc10Xfko6v4a3ucM6A==}
+    dev: false
+
+  /url-toolkit/2.2.4:
+    resolution: {integrity: sha512-iRttD8+Nz3UnBUnq/uzwggD+WJtaY0iwpvvuydlKV87DDvT4gYfbug7GM6H7zo14srm6NubIy78vRZkl6KcQWA==}
     dev: false
 
   /util-deprecate/1.0.2:

@@ -29,6 +29,7 @@
   "dependencies": {
     "@themesberg/flowbite": "^1.2.0",
     "hls.js": "^1.1.2",
-    "plyr-react": "^3.2.1"
+    "plyr-react": "^3.2.1",
+    "react-hls-player": "^3.0.7"
   }
 }

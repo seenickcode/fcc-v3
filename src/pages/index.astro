@@ -4,8 +4,8 @@ import BaseHead from '../components/BaseHead.astro';
 import DarkModeToggle from '../components/DarkModeToggle.tsx';
 // import DarkModeToggle from '../components/DarkModeToggle.svelte';
 import Logo from '../components/Logo.astro';
-// import BlogList from '../components/BlogList.svelte';
 import BlogList from '../components/BlogList.astro';
+import Player from '../components/Player.tsx';
 
 ---
 <html lang="en">
@@ -32,6 +32,7 @@ import BlogList from '../components/BlogList.astro';
       </div>
       <!-- content -->
       <div class="">
+        <div style="width:300px"><Player client:idle="react" /></div>
         <BlogList />
       </div>
     </div>
