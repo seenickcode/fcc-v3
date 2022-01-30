@@ -8,5 +8,6 @@
 
 // @ts-check
 export default /** @type {import('astro').AstroUserConfig} */ ({
-  renderers: ["@astrojs/renderer-react", "@astrojs/renderer-svelte"],
+  // renderers: ["@astrojs/renderer-react", "@astrojs/renderer-svelte"],
+  renderers: ["@astrojs/renderer-preact", "@astrojs/renderer-svelte"],
 });

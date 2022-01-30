@@ -1,4 +1,4 @@
-import { Component } from "react";
+import { Component } from "preact";
 
 interface State {
   title: string;
@@ -7,24 +7,71 @@ interface State {
 export default class DarkModeToggle extends Component<{}, State> {
   constructor(props) {
     super(props);
-    this.state = { title: "on" };
+    this.state = { title: "off" };
   }
 
   toggle = (e) => {
-    debugger;
     e.preventDefault();
-    console.log("toggle");
+    const isOn = this.state.title == "on";
+    if (isOn) {
+      document.documentElement.classList.remove("dark");
+    } else {
+      document.documentElement.classList.add("dark");
+    }
+    this.setState({
+      title: isOn ? "off" : "on",
+    });
 
-    // const newTitle = this.state == "on" ? "off" : "on";
-    // this.setState({
-    //   title: newTitle,
+    // var themeToggleDarkIcon = document.getElementById("theme-toggle-dark-icon");
+    // var themeToggleLightIcon = document.getElementById(
+    //   "theme-toggle-light-icon"
+    // );
+
+    // // Change the icons inside the button based on previous settings
+    // if (
+    //   localStorage.getItem("color-theme") === "dark" ||
+    //   (!("color-theme" in localStorage) &&
+    //     window.matchMedia("(prefers-color-scheme: dark)").matches)
+    // ) {
+    //   themeToggleLightIcon.classList.remove("hidden");
+    // } else {
+    //   themeToggleDarkIcon.classList.remove("hidden");
+    // }
+
+    // var themeToggleBtn = document.getElementById("theme-toggle");
+
+    // themeToggleBtn.addEventListener("click", function () {
+    //   // toggle icons inside button
+    //   themeToggleDarkIcon.classList.toggle("hidden");
+    //   themeToggleLightIcon.classList.toggle("hidden");
+
+    //   // if set via local storage previously
+    //   if (localStorage.getItem("color-theme")) {
+    //     if (localStorage.getItem("color-theme") === "light") {
+    //       document.documentElement.classList.add("dark");
+    //       localStorage.setItem("color-theme", "dark");
+    //     } else {
+    //       document.documentElement.classList.remove("dark");
+    //       localStorage.setItem("color-theme", "light");
+    //     }
+
+    //     // if NOT set via local storage previously
+    //   } else {
+    //     if (document.documentElement.classList.contains("dark")) {
+    //       document.documentElement.classList.remove("dark");
+    //       localStorage.setItem("color-theme", "light");
+    //     } else {
+    //       document.documentElement.classList.add("dark");
+    //       localStorage.setItem("color-theme", "dark");
+    //     }
+    //   }
     // });
   };
 
   render() {
     return (
       <p>
-        <a href="/" onClick={this.toggle}>
+        <a href="#" onClick={this.toggle}>
           {this.state.title}
         </a>
       </p>

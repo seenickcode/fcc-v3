@@ -2,6 +2,7 @@
 // Component Imports
 import BaseHead from '../components/BaseHead.astro';
 import DarkModeToggle from '../components/DarkModeToggle.tsx';
+// import DarkModeToggle from '../components/DarkModeToggle.svelte';
 import Logo from '../components/Logo.astro';
 // import BlogList from '../components/BlogList.svelte';
 import BlogList from '../components/BlogList.astro';
@@ -12,16 +13,17 @@ import BlogList from '../components/BlogList.astro';
     <BaseHead title='The Steady Calendar Course - The Flutter Crash Course' description='' permalink='' />
     
   </head>
-  <body>
+  <body class="h-screen bg-white dark:bg-black text-black dark:text-white">
     <div class="flex flex-col">
       <!-- nav -->
       <div class="flex flex-row justify-between items-center">
+
         <!-- left -->
         <div><Logo /></div>
 
         <!-- right -->
         <div class="flex flex-row items-center space-x-4">
-          <div><DarkModeToggle /></div>
+          <div><DarkModeToggle client:only="preact" /></div>
           <div>item</div>
           <div>item</div>
           <div>item</div>
@@ -29,7 +31,7 @@ import BlogList from '../components/BlogList.astro';
         
       </div>
       <!-- content -->
-      <div class="bg-green-300">
+      <div class="">
         <BlogList />
       </div>
     </div>
