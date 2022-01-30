@@ -10,7 +10,7 @@
 export default /** @type {import('astro').AstroUserConfig} */ ({
   // renderers: ["@astrojs/renderer-react", "@astrojs/renderer-svelte"],
   renderers: [
-    "@astrojs/renderer-react",
+    // "@astrojs/renderer-react",
     "@astrojs/renderer-preact",
     "@astrojs/renderer-svelte",
   ],

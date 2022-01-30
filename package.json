@@ -10,26 +10,16 @@
   },
   "devDependencies": {
     "@astrojs/renderer-preact": "^0.3.2",
-    "@astrojs/renderer-react": "^0.4.0",
     "@astrojs/renderer-svelte": "^0.3.1",
     "@sanity/client": "^2.23.2",
-    "@types/react": "^17.0.38",
-    "@types/react-dom": "^17.0.11",
     "astro": "^0.21.13",
     "autoprefixer": "^10.4.1",
+    "preact": "^10.5.15",
     "prettier": "2.5.1",
     "prettier-plugin-astro": "^0.0.11",
     "prettier-plugin-svelte": "^2.5.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
     "rollbar": "^2.24.0",
     "tailwindcss": "^3.0.7",
     "vite": "^2.7.10"
-  },
-  "dependencies": {
-    "@themesberg/flowbite": "^1.2.0",
-    "hls.js": "^1.1.2",
-    "plyr-react": "^3.2.1",
-    "react-hls-player": "^3.0.7"
   }
 }
