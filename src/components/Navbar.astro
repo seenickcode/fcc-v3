@@ -1,0 +1,23 @@
+---
+import Logo from "../components/Logo.astro";
+import DarkModeToggle from "../components/DarkModeToggle.tsx";
+// import DarkModeToggle from '../components/DarkModeToggle.svelte';
+---
+
+<!-- nav -->
+
+<div
+  class="flex flex-row flex-wrap justify-between bg-accent text-white dark:bg-primary dark:text-white px-4 py-2"
+>
+  <div class="py-5"><Logo /></div>
+  <div class="flex flex-col flex-wrap items-end justify-between text-base">
+    <div class="pb-5"><DarkModeToggle client:only="preact" /></div>
+    <div class="flex flex-row flex-wrap justify-end space-x-10 nav text-base">
+      <div>item1</div>
+      <div>item2</div>
+      <div>item3</div>
+      <div>item4</div>
+      <div>item5</div>
+    </div>
+  </div>
+</div>

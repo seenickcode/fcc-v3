@@ -1,38 +1,26 @@
 ---
 // Component Imports
-import BaseHead from '../components/BaseHead.astro';
-import DarkModeToggle from '../components/DarkModeToggle.tsx';
-// import DarkModeToggle from '../components/DarkModeToggle.svelte';
-import Logo from '../components/Logo.astro';
-import BlogList from '../components/BlogList.astro';
+import BaseHead from "../components/BaseHead.astro";
+import Navbar from "../components/Navbar.astro";
+import BlogList from "../components/BlogList.astro";
 // import Player from '../components/Player.tsx';
-
 ---
+
 <html lang="en">
   <head>
-    <BaseHead title='The Steady Calendar Course - The Flutter Crash Course' description='' permalink='' />
-    
+    <BaseHead
+      title="The Steady Calendar Course - The Flutter Crash Course"
+      description=""
+      permalink=""
+    />
   </head>
-  <body class="h-screen bg-white dark:bg-black text-black dark:text-white">
-    <div class="flex flex-col">
-      <!-- nav -->
-      <div class="flex flex-row justify-between items-center">
-
-        <!-- left -->
-        <div><Logo /></div>
-
-        <!-- right -->
-        <div class="flex flex-row items-center space-x-4">
-          <div><DarkModeToggle client:only="preact" /></div>
-          <div>item</div>
-          <div>item</div>
-          <div>item</div>
-        </div>
-        
-      </div>
-      <!-- content -->
-      <div class="">
-        <!-- <div style="width:300px"><Player client:idle="react" /></div> -->
+  <body class="h-screen bg-white text-black dark:bg-secondary dark:text-accent">
+    <div
+      class="flex flex-col items-center bg-accent text-black dark:bg-secondary dark:text-accent"
+    >
+      <div class="w-full max-w-[1080px] px-5" style="">
+        <Navbar />
+        <h1>Header</h1>
         <BlogList />
       </div>
     </div>

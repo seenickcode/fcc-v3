@@ -1,10 +1,13 @@
 ---
-import { blogPosts } from '../lib/db';
+import { blogPosts } from "../lib/db";
 
 const posts = await blogPosts.all();
 ---
-<div>
+
+<div class="text-base">
   {posts.map((p) => (
-    <p><a href="/blog/{p.slug.current}">{p.title}</a></p>
+    <p>
+      <a href="/blog/{p.slug.current}">{p.title}</a>
+    </p>
   ))}
 </div>

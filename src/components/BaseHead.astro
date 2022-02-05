@@ -10,8 +10,8 @@ const { title, description, permalink } = Astro.props;
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width" />
-<!-- <link rel="icon" type="image/x-icon" href="/favicon.ico" /> --> <!-- NOTE this would be in the static dir -->
-
+<!-- <link rel="icon" type="image/x-icon" href="/favicon.ico" /> -->
+<!-- NOTE this would be in the static dir -->
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
@@ -36,5 +36,12 @@ const { title, description, permalink } = Astro.props;
 <link rel="preconnect" href="https://fonts.gstatic.com" />
 <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;700&display=swap"> -->
 
-<link rel="stylesheet" href={Astro.resolve('../styles/global.css')} />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap"
+  rel="stylesheet"
+/>
+
+<link rel="stylesheet" href={Astro.resolve("../styles/global.css")} />
 <!-- <link rel="stylesheet" href={Astro.resolve('../../node_modules/@themesberg/flowbite/dist/flowbite.min.css')} /> -->
