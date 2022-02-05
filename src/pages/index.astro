@@ -2,8 +2,8 @@
 // Component Imports
 import BaseHead from "../components/BaseHead.astro";
 import Navbar from "../components/Navbar.astro";
+import Player2 from "../components/Player2.tsx";
 import BlogList from "../components/BlogList.astro";
-// import Player from '../components/Player.tsx';
 ---
 
 <html lang="en">
@@ -21,6 +21,7 @@ import BlogList from "../components/BlogList.astro";
       <div class="w-full max-w-[1080px] px-5" style="">
         <Navbar />
         <h1>Header</h1>
+        <Player2 client:only="preact" />
         <BlogList />
       </div>
     </div>
