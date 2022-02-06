@@ -1,58 +1,44 @@
-// import { useEffect, useRef } from "react";
-// // import "./styles.css";
+import { useEffect, useState } from "preact/hooks";
+import Hls, { Level } from "hls.js";
 
-// import "plyr-react/dist/plyr.css";
-// import Hls from "hls.js";
-// import Plyr, { APITypes, PlyrProps, PlyrInstance } from "plyr-react";
+export default function Player(props) {
+  const [playing, setPlaying] = useState(false);
 
-// const videoSrc: Plyr.SourceInfo = {
-//   type: "video",
-//   sources: [
-//     {
-//       src: "yWtFb9LJs3o",
-//       provider: "youtube",
-//     },
-//   ],
-// };
+  useEffect(() => {
+    if (Hls.isSupported()) {
+      var video = document.getElementById("video") as HTMLMediaElement;
+      var hls = new Hls({ autoStartLoad: false, capLevelToPlayerSize: true });
 
-// export default function Player() {
-//   const ref = useRef<APITypes>(null);
+      hls.attachMedia(video);
+      hls.on(Hls.Events.MEDIA_ATTACHED, function () {
+        hls.loadSource(props.src);
+        hls.on(Hls.Events.MANIFEST_PARSED, function (event, data) {});
+      });
 
-//   useEffect(() => {
-//     const loadVideo = async () => {
-//       const video = document.getElementById("plyr") as HTMLVideoElement;
+      video.onload = () => {};
+      video.onplay = () => {
+        setPlaying(true);
+        hls.startLoad(-1);
+        // TODO add an overlay on load with the following to remove the controls by default
+        // video::-webkit-media-controls-panel { visibility: hidden; }
+        // then remove it here on play
+        // TODO consider a proper video player instead vs custom styling this
+      };
+      video.onpause = () => {
+        setPlaying(false);
+        hls.stopLoad();
+      };
+    }
+  }, []);
 
-//       var hls = new Hls();
-//       hls.loadSource(
-//         "https://multiplatform-f.akamaihd.net/i/multi/will/bunny/big_buck_bunny_,640x360_400,640x360_700,640x360_1000,950x540_1500,.f4v.csmil/master.m3u8"
-//       ); // "https://cdn.plyr.io/static/blank.mp4");
-//       hls.attachMedia(video);
-//       // @ts-ignore
-//       ref.current!.plyr.media = video;
-
-//       // hls.on(Hls.Events.MANIFEST_PARSED, function () {
-//       //   (ref.current!.plyr as PlyrInstance).play();
-//       // });
-//     };
-//     loadVideo();
-//   });
-
-//   return (
-//     <Plyr
-//       id="plyr"
-//       options={{ volume: 0.1 }}
-//       source={{} as PlyrProps["source"]}
-//       ref={ref}
-//     />
-//   );
-// }
-
-// // export default function App() {
-// //   const supported = Hls.isSupported();
-
-// //   return (
-// //     <div>
-// //       {supported ? <MyComponent /> : "HLS is not supported in your browser"}
-// //     </div>
-// //   );
-// // }
+  return (
+    <div>
+      <video
+        id="video"
+        controls
+        width={props.width}
+        poster="https://cdn.sanity.io/images/o8uzmguj/production/26c3619b787a371328384782217ad13b9f5c11d9-1265x712.jpg"
+      ></video>
+    </div>
+  );
+}

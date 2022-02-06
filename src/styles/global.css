@@ -15,3 +15,13 @@ h6,
 .nav {
   font-family: "Zen Dots", cursive;
 }
+
+/* hides video spinner */
+video::-webkit-media-controls {
+  visibility: hidden;
+}
+
+video::-webkit-media-controls-enclosure {
+  visibility: visible;
+}
+/* end hides video spinner */

@@ -2,7 +2,7 @@
 // Component Imports
 import BaseHead from "../components/BaseHead.astro";
 import Navbar from "../components/Navbar.astro";
-import Player2 from "../components/Player2.tsx";
+import Player from "../components/Player.tsx";
 import BlogList from "../components/BlogList.astro";
 ---
 
@@ -21,7 +21,11 @@ import BlogList from "../components/BlogList.astro";
       <div class="w-full max-w-[1080px] px-5" style="">
         <Navbar />
         <h1>Header</h1>
-        <Player2 client:only="preact" />
+        <Player
+          client:only="preact"
+          width="200"
+          src="https://multiplatform-f.akamaihd.net/i/multi/will/bunny/big_buck_bunny_,640x360_400,640x360_700,640x360_1000,950x540_1500,.f4v.csmil/master.m3u8"
+        />
         <BlogList />
       </div>
     </div>
