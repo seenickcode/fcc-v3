@@ -16,7 +16,8 @@ import BlogList from "../components/BlogList.astro";
   </head>
   <body class="h-screen bg-white text-black dark:bg-secondary dark:text-accent">
     <div
-      class="flex flex-col items-center bg-accent text-black dark:bg-secondary dark:text-accent"
+      class="flex flex-col items-center bg-accent text-white dark:bg-secondary dark:text-accent"
+      style=""
     >
       <div class="w-full max-w-[1080px] px-5" style="">
         <Navbar />
@@ -26,6 +27,41 @@ import BlogList from "../components/BlogList.astro";
           width="200"
           src="https://multiplatform-f.akamaihd.net/i/multi/will/bunny/big_buck_bunny_,640x360_400,640x360_700,640x360_1000,950x540_1500,.f4v.csmil/master.m3u8"
         />
+        <BlogList />
+      </div>
+    </div>
+    <div class="w-full bg-white">
+      <div class="h-24 bg-accent dark:bg-secondary diag-sep1"></div>
+    </div>
+    <div
+      class="flex flex-col items-center text-center bg-white text-black dark:bg-primary dark:text-white pt-14"
+    >
+      <div class="w-full grid grid-cols-3 max-w-[1080px] px-5" style="">
+        <div>
+          <p>Join</p>
+          <p class="text-4xl">13,000</p>
+          <p>fellow students</p>
+        </div>
+        <div>
+          <p>Join</p>
+          <p class="text-4xl">13,000</p>
+          <p>fellow students</p>
+        </div>
+        <div>
+          <p>Join</p>
+          <p class="text-4xl">13,000</p>
+          <p>fellow students</p>
+        </div>
+      </div>
+    </div>
+    <div class="w-full bg-accent dark:bg-secondary">
+      <div class="h-24 bg-white diag-sep2"></div>
+    </div>
+    <div
+      class="flex flex-col items-center bg-accent text-white dark:bg-secondary dark:text-accent"
+      style=""
+    >
+      <div class="w-full max-w-[1080px] px-5 py-20" style="">
         <BlogList />
       </div>
     </div>
