@@ -7,7 +7,7 @@ const posts = await blogPosts.all();
 <div class="text-base">
   {posts.map((p) => (
     <p>
-      <a href="/blog/{p.slug.current}">{p.title}</a>
+      <a href={`/blog/${p.slug.current}`}>{p.title}</a>
     </p>
   ))}
 </div>

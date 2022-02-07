@@ -10,8 +10,7 @@ export const sanity = sanityClient({
 
 export const blogPosts = {
   async all(): Promise<Post[]> {
-    console.log("> fetching 1");
-    const q = "*[_type == 'post']";
+    const q = "*[_type == 'post'] | order(_createdAt desc) {slug, title}";
     try {
       return await sanity.fetch<Post[]>(q);
     } catch (err) {
@@ -19,7 +18,16 @@ export const blogPosts = {
       return [];
     }
   },
-  async fetch_by_slug(slug: string): Promise<Post> {
+  async allSlugs(): Promise<Post[]> {
+    const q = "*[_type == 'post']  | order(_createdAt desc) {slug}";
+    try {
+      return await sanity.fetch<Post[]>(q);
+    } catch (err) {
+      console.error("sanity failed fetching posts", err);
+      return [];
+    }
+  },
+  async fetchBySlug(slug: string): Promise<Post> {
     const q = `*[_type == 'post' && slug.current == '${slug}'][0]`;
     try {
       return await sanity.fetch<Post>(q);

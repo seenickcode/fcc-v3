@@ -1,0 +1,34 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Logo from "../components/Logo.astro";
+import Nav from "../components/Nav.astro";
+import DarkModeToggle from "../components/DarkModeToggle.tsx";
+
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <BaseHead {title} description="" permalink="" />
+  </head>
+  <body class="h-screen">
+    <div class="flex flex-col">
+      <!-- colored full width container -->
+      <div
+        class="w-full flex flex-col items-center bg-primary text-white dark:bg-secondary dark:text-primary"
+      >
+        <!-- sub content container with a max width -->
+        <div
+          class="w-full max-w-[1080px] flex flex-row flex-wrap justify-between px-5 py-8"
+        >
+          <a href="/"><Logo /></a>
+          <div class="flex flex-col flex-wrap items-end space-y-4 text-base">
+            <DarkModeToggle client:only="preact" />
+            <Nav />
+          </div>
+        </div>
+      </div>
+      <slot />
+    </div>
+  </body>
+</html>

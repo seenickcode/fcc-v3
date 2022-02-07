@@ -1,71 +1,38 @@
 ---
-// Component Imports
-import BaseHead from "../components/BaseHead.astro";
-import Navbar from "../components/Navbar.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import PageContentWrapper from "../layouts/PageContentWrapper.astro";
 import Player from "../components/Player.tsx";
+import ValProp from "../components/ValProp.astro";
 import BlogList from "../components/BlogList.astro";
 ---
 
-<html lang="en">
-  <head>
-    <BaseHead
-      title="The Steady Calendar Course - The Flutter Crash Course"
-      description=""
-      permalink=""
+<MainLayout title="The Flutter Crash Course - Home">
+  <PageContentWrapper theme="primary">
+    <h1>Header</h1>
+
+    <Player
+      client:only="preact"
+      width="200"
+      src="https://multiplatform-f.akamaihd.net/i/multi/will/bunny/big_buck_bunny_,640x360_400,640x360_700,640x360_1000,950x540_1500,.f4v.csmil/master.m3u8"
     />
-  </head>
-  <body
-    class="h-screen bg-white text-black dark:bg-secondary dark:text-primary"
-  >
-    <div
-      class="flex flex-col items-center bg-primary text-white dark:bg-secondary dark:text-primary"
-      style=""
-    >
-      <div class="w-full max-w-[1080px] px-5" style="">
-        <Navbar />
-        <h1>Header</h1>
-        <Player
-          client:only="preact"
-          width="200"
-          src="https://multiplatform-f.akamaihd.net/i/multi/will/bunny/big_buck_bunny_,640x360_400,640x360_700,640x360_1000,950x540_1500,.f4v.csmil/master.m3u8"
-        />
-        <BlogList />
-      </div>
+    <BlogList />
+  </PageContentWrapper>
+  <div class="w-full bg-white dark:bg-primary">
+    <div class="h-24 bg-primary dark:bg-secondary diag-sep1"></div>
+  </div>
+  <PageContentWrapper theme="secondary">
+    <div class="text-center grid grid-cols-3 pt-10">
+      <ValProp vals="Join|13,000|fellow students" />
+      <ValProp vals="Join|13,000|fellow students" />
+      <ValProp vals="Join|13,000|fellow students" />
     </div>
-    <div class="w-full bg-white dark:bg-primary">
-      <div class="h-24 bg-primary dark:bg-secondary diag-sep1"></div>
-    </div>
-    <div
-      class="flex flex-col items-center text-center bg-white text-black dark:bg-primary dark:text-white pt-14"
-    >
-      <div class="w-full grid grid-cols-3 max-w-[1080px] px-5" style="">
-        <div>
-          <p>Join</p>
-          <p class="text-4xl">13,000</p>
-          <p>fellow students</p>
-        </div>
-        <div>
-          <p>Join</p>
-          <p class="text-4xl">13,000</p>
-          <p>fellow students</p>
-        </div>
-        <div>
-          <p>Join</p>
-          <p class="text-4xl">13,000</p>
-          <p>fellow students</p>
-        </div>
-      </div>
-    </div>
-    <div class="w-full bg-primary dark:bg-secondary">
-      <div class="h-24 bg-white dark:bg-primary diag-sep2"></div>
-    </div>
-    <div
-      class="flex flex-col items-center bg-primary text-white dark:bg-secondary dark:text-primary"
-      style=""
-    >
-      <div class="w-full max-w-[1080px] px-5 py-20" style="">
-        <BlogList />
-      </div>
-    </div>
-  </body>
-</html>
+  </PageContentWrapper>
+
+  <div class="w-full bg-primary dark:bg-secondary">
+    <div class="h-24 bg-white dark:bg-primary diag-sep2"></div>
+  </div>
+
+  <PageContentWrapper theme="primary">
+    <BlogList />
+  </PageContentWrapper>
+</MainLayout>

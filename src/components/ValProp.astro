@@ -1,0 +1,10 @@
+---
+const { vals } = Astro.props;
+const parts = vals.split("|");
+---
+
+<div>
+  <p>{parts[0]}</p>
+  <p class="text-4xl">{parts[1]}</p>
+  <p>{parts[2]}</p>
+</div>

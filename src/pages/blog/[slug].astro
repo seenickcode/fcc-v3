@@ -1,0 +1,25 @@
+---
+import { Markdown } from "astro/components";
+import MainLayout from "../../layouts/MainLayout.astro";
+import { blogPosts } from "../../lib/db";
+
+export async function getStaticPaths() {
+  const posts = await blogPosts.allSlugs();
+  return posts.map((post) => ({ params: { slug: post.slug.current } }));
+}
+
+const { slug } = Astro.request.params;
+const post = await blogPosts.fetchBySlug(slug);
+---
+
+<MainLayout>
+  <div
+    class="w-full flex flex-col items-center bg-white text-black dark:bg-secondary dark:text-primary"
+  >
+    <div class="w-full max-w-[1080px] px-5 py-8">
+      <Markdown>
+        {post.body}
+      </Markdown>
+    </div>
+  </div>
+</MainLayout>
