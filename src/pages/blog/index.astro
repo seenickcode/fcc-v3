@@ -1,0 +1,12 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import PageContentWrapper from "../../layouts/PageContentWrapper.astro";
+import BlogList from "../../components/BlogList.astro";
+---
+
+<MainLayout title="Home">
+  <PageContentWrapper theme="secondary">
+    <h1>Tutorials</h1>
+    <BlogList />
+  </PageContentWrapper>
+</MainLayout>

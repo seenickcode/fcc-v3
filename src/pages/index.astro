@@ -3,10 +3,9 @@ import MainLayout from "../layouts/MainLayout.astro";
 import PageContentWrapper from "../layouts/PageContentWrapper.astro";
 import Player from "../components/Player.tsx";
 import ValProp from "../components/ValProp.astro";
-import BlogList from "../components/BlogList.astro";
 ---
 
-<MainLayout title="The Flutter Crash Course - Home">
+<MainLayout title="Home">
   <PageContentWrapper theme="primary">
     <h1>Header</h1>
 
@@ -15,7 +14,6 @@ import BlogList from "../components/BlogList.astro";
       width="200"
       src="https://multiplatform-f.akamaihd.net/i/multi/will/bunny/big_buck_bunny_,640x360_400,640x360_700,640x360_1000,950x540_1500,.f4v.csmil/master.m3u8"
     />
-    <BlogList />
   </PageContentWrapper>
   <div class="w-full bg-white dark:bg-primary">
     <div class="h-24 bg-primary dark:bg-secondary diag-sep1"></div>
@@ -31,8 +29,4 @@ import BlogList from "../components/BlogList.astro";
   <div class="w-full bg-primary dark:bg-secondary">
     <div class="h-24 bg-white dark:bg-primary diag-sep2"></div>
   </div>
-
-  <PageContentWrapper theme="primary">
-    <BlogList />
-  </PageContentWrapper>
 </MainLayout>

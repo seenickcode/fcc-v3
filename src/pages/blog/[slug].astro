@@ -12,7 +12,7 @@ const { slug } = Astro.request.params;
 const post = await blogPosts.fetchBySlug(slug);
 ---
 
-<MainLayout>
+<MainLayout title={post.title}>
   <div
     class="w-full flex flex-col items-center bg-white text-black dark:bg-secondary dark:text-primary"
   >

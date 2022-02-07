@@ -3,6 +3,7 @@ import BaseHead from "../components/BaseHead.astro";
 import Logo from "../components/Logo.astro";
 import Nav from "../components/Nav.astro";
 import DarkModeToggle from "../components/DarkModeToggle.tsx";
+import PageContentWrapper from "../layouts/PageContentWrapper.astro";
 
 const { title } = Astro.props;
 ---
@@ -11,7 +12,7 @@ const { title } = Astro.props;
   <head>
     <BaseHead {title} description="" permalink="" />
   </head>
-  <body class="h-screen">
+  <body>
     <div class="flex flex-col">
       <!-- colored full width container -->
       <div
@@ -28,7 +29,13 @@ const { title } = Astro.props;
           </div>
         </div>
       </div>
-      <slot />
+      <div class="h-screen">
+        <!-- TODO consider footer https://stackoverflow.com/questions/65976223/how-to-use-calc-in-tailwind-css -->
+        <slot />
+      </div>
+      <PageContentWrapper theme="primary">
+        <p>Footer</p>
+      </PageContentWrapper>
     </div>
   </body>
 </html>
