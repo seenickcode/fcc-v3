@@ -1,32 +1,39 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import PageContentWrapper from "../layouts/PageContentWrapper.astro";
+import Section from "../layouts/PageContentWrapper.astro";
+import Separator from "../layouts/Separator.astro";
 import Player from "../components/Player.tsx";
 import ValProp from "../components/ValProp.astro";
+import FilterButton from "../components/FilterButton.astro";
+import { themeColors } from "../utils/colors.ts";
+
+const skills = ['Dart', 'Layout', 'Models', 'Fonts', 'Style', 'Image', 'Navigation', 'Event Handlers', 'StatefulWidget', 'JSON', 'Web Services', 'Integration Tests', 'AppBar'];
 ---
 
 <MainLayout title="Home">
-  <PageContentWrapper theme="primary">
-    <h1>Header</h1>
-
-    <Player
-      client:only="preact"
-      width="200"
-      src="https://multiplatform-f.akamaihd.net/i/multi/will/bunny/big_buck_bunny_,640x360_400,640x360_700,640x360_1000,950x540_1500,.f4v.csmil/master.m3u8"
-    />
-  </PageContentWrapper>
-  <div class="w-full bg-white dark:bg-primary">
-    <div class="h-24 bg-primary dark:bg-secondary diag-sep1"></div>
-  </div>
-  <PageContentWrapper theme="secondary">
-    <div class="text-center grid grid-cols-3 pt-10">
+  <Section append={themeColors("primary")}>
+    <h1 class="text-3xl">
+      LEARN PROGRAMMING BY BUILDING REAL APPS STEP BY STEP
+    </h1>
+  </Section>
+  <Separator appendOuter={themeColors("primary")} appendInner={themeColors("accent")} clipPath="polygon(0 30%, 100% 60%, 100% 100%, 0 100%);" />
+  <Section append={themeColors("accent")}>
+    <div class="text-center grid grid-cols-3">
       <ValProp vals="Join|13,000|fellow students" />
       <ValProp vals="Join|13,000|fellow students" />
       <ValProp vals="Join|13,000|fellow students" />
     </div>
-  </PageContentWrapper>
-
-  <div class="w-full bg-primary dark:bg-secondary">
-    <div class="h-24 bg-white dark:bg-primary diag-sep2"></div>
-  </div>
+  </Section>
+  <Separator appendOuter={themeColors("accent")} appendInner={themeColors("secondary")} clipPath="polygon(0 60%, 100% 30%, 100% 100%, 0 100%);" />
+  <Section append={themeColors("secondary")}>
+    <h2 class="text-right">Flutter Skills We Teach</h2>
+    <div class="text-center grid grid-cols-5">
+      {skills.map((v) => (<FilterButton>{v}</FilterButton>))}
+    </div>
+    <!-- <Player
+      client:only="preact"
+      width="200"
+      src="https://multiplatform-f.akamaihd.net/i/multi/will/bunny/big_buck_bunny_,640x360_400,640x360_700,640x360_1000,950x540_1500,.f4v.csmil/master.m3u8"
+    /> -->
+  </Section>
 </MainLayout>

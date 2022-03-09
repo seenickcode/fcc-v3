@@ -1,14 +1,8 @@
 ---
-const { theme } = Astro.props;
-const colors =
-  theme == "primary"
-    ? "bg-primary text-white dark:bg-secondary dark:text-primary"
-    : theme == "secondary"
-    ? "bg-white text-black dark:bg-secondary dark:text-primary"
-    : "";
+const { append } = Astro.props;
 ---
 
-<div class="w-full flex flex-col items-center ${colors}">
+<div class="w-full flex flex-col items-center ${append}">
   <div class="w-full max-w-[1080px] px-5 py-8">
     <slot />
   </div>

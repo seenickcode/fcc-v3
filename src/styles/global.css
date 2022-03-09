@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  font-family: "Courier";
+  font-family: "Courier New";
 }
 
 h1,
@@ -13,7 +13,7 @@ h4,
 h5,
 h6,
 .nav {
-  font-family: "Zen Dots", cursive;
+  /* font-family: "Zen Dots", cursive; */
 }
 
 /* hides video spinner */
@@ -25,38 +25,3 @@ video::-webkit-media-controls-enclosure {
   visibility: visible;
 }
 /* end hides video spinner */
-
-/* .foo {
-  background-color: #f00;
-  background-image: -webkit-linear-gradient(135deg, #0f0 50%, #00f 50%);
-  min-height: 400px;
-} */
-
-.diag-sep1 {
-  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 60%);
-}
-
-.diag-sep2 {
-  clip-path: polygon(0 0, 100% 0%, 100% 60%, 0 100%);
-}
-
-/* .clip1 {
-  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 90%);
-}
-
-.clip2 {
-  clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
-}
-
-.noclip {
-  clip-path: none;
-}
-
-.diag {
-  background-image: linear-gradient(45deg, #654ea3, #654ea3);
-  transform: skewY(-11deg);
-}
-
-.diag > div {
-  transform: skewY(11deg);
-} */
