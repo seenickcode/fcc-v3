@@ -7,12 +7,12 @@ import ValProp from "../components/ValProp.astro";
 import FilterButton from "../components/FilterButton.astro";
 import { themeColors } from "../utils/colors.ts";
 
-const skills = ['Dart', 'Layout', 'Models', 'Fonts', 'Style', 'Image', 'Navigation', 'Event Handlers', 'StatefulWidget', 'JSON', 'Web Services', 'Integration Tests', 'AppBar'];
+const skills = ['Dart', 'Layout', 'Models', 'Fonts', 'Style', 'Image', 'Navigation', 'Event Handlers', 'State Management', 'JSON', 'Web Services', 'Integration Tests', 'AppBar'];
 ---
 
 <MainLayout title="Home">
   <Section append={themeColors("primary")}>
-    <h1 class="text-3xl">
+    <h1 class="text-4xl">
       LEARN PROGRAMMING BY BUILDING REAL APPS STEP BY STEP
     </h1>
   </Section>
@@ -26,8 +26,8 @@ const skills = ['Dart', 'Layout', 'Models', 'Fonts', 'Style', 'Image', 'Navigati
   </Section>
   <Separator appendOuter={themeColors("accent")} appendInner={themeColors("secondary")} clipPath="polygon(0 60%, 100% 30%, 100% 100%, 0 100%);" />
   <Section append={themeColors("secondary")}>
-    <h2 class="text-right">Flutter Skills We Teach</h2>
-    <div class="text-center grid grid-cols-5">
+    <h2 class="text-3xl text-right mb-12">Flutter Skills We Teach</h2>
+    <div class="text-center grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
       {skills.map((v) => (<FilterButton>{v}</FilterButton>))}
     </div>
     <!-- <Player

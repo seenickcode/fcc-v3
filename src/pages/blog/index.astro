@@ -2,10 +2,11 @@
 import MainLayout from "../../layouts/MainLayout.astro";
 import PageContentWrapper from "../../layouts/PageContentWrapper.astro";
 import BlogList from "../../components/BlogList.astro";
+import { themeColors } from "../utils/colors.ts";
 ---
 
 <MainLayout title="Home">
-  <PageContentWrapper theme="secondary">
+  <PageContentWrapper append={themeColors("primary")}>
     <h1>Tutorials</h1>
     <BlogList />
   </PageContentWrapper>

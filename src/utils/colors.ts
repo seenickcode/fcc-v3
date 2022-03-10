@@ -1,6 +1,6 @@
 const primary = "bg-primary text-black dark:bg-secondary dark:text-primary";
-const secondary = "bg-white text-black dark:bg-secondary dark:text-primary";
-const accent = "bg-accent text-white dark:bg-white dark:text-black";
+const secondary = "bg-white text-black dark:bg-primary dark:text-white";
+const accent = "bg-accent text-white dark:bg-secondary dark:text-primary";
 
 export function themeColors(themeName: string): string {
   return themeName == "primary"
