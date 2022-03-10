@@ -8,6 +8,7 @@ import FilterButton from "../components/FilterButton.astro";
 import { themeColors } from "../utils/colors.ts";
 
 const skills = ['Dart', 'Layout', 'Models', 'Fonts', 'Style', 'Image', 'Navigation', 'Event Handlers', 'State Management', 'JSON', 'Web Services', 'Integration Tests', 'AppBar'];
+const reviews = ["“Honestly, your content is still the best crash course and intro to flutter fut relying on firebase to build all these apps”.", "“Honestly, your content is still the best crash course and intro to flutter fut relying on firebase to build all these apps”.", "“Honestly, your content is still the best crash course and intro to flutter fut relying on firebase to build all these apps”.", "“Honestly, your content is still the best crash course and intro to flutter fut relying on firebase to build all these apps”."];
 ---
 
 <MainLayout title="Home">
@@ -35,5 +36,12 @@ const skills = ['Dart', 'Layout', 'Models', 'Fonts', 'Style', 'Image', 'Navigati
       width="200"
       src="https://multiplatform-f.akamaihd.net/i/multi/will/bunny/big_buck_bunny_,640x360_400,640x360_700,640x360_1000,950x540_1500,.f4v.csmil/master.m3u8"
     /> -->
+  </Section>
+  <Separator appendOuter={themeColors("secondary")} appendInner={themeColors("primary")} clipPath="polygon(0 60%, 100% 30%, 100% 100%, 0 100%);" />
+  <Section append={themeColors("primary")}>
+  <h2 class="text-3xl text-center mb-12">Community Love</h2>
+    <div class="text-center grid sm:grid-cols-2 lg:grid-cols-2 gap-16">
+      {reviews.map((v) => (<p>{v}</p>))}
+    </div>
   </Section>
 </MainLayout>
