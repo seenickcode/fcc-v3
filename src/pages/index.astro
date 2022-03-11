@@ -139,8 +139,23 @@ const courseItems = await courses.all();
     </div>
   </Section>
   <Separator
-    appendOuter={themeColors("primary")}
+    appendOuter={themeColors("secondary")}
     appendInner={themeColors("accent")}
-    clipPath="polygon(0 0, 100% 0, 100% 60%, 0 0);"
+    clipPath="polygon(0 0, 100% 0, 100% 30%, 0 0);"
   />
+  <div class="flex flex-col gap-6"></div>
+  <Section append={themeColors("secondary")}>
+    <h2 class="text-center">YOUR INSTRUCTOR</h2>
+    <img src="https://fluttercrashcourse.global.ssl.fastly.net/uploads/nick-pace-5.jpg" class="mr-8 mb-4 float-left" style="width:400px;" />
+    <!-- TODO convert to markdown -->
+    <p class="my-5">Hi there! I am Nick Manning, your instructor.</p>
+    <p class="my-5">I have had a passion for programming ever since I can remember - coppying code into my notebook with a pencil in my free time:)</p>
+    <p class="my-5">The past 19 years of my life has been an exciting journey of working as technical lead, Director of Mobile and CTO at various amazing companies, including such global brands as Adidas, Reebok and Louis Vuitton and a now-Trip-Advisor-acquired company.</p>
+    <p class="my-5">Over the years I have co-founded various startups one of which was a participant at the Techstars accelerator.</p>
+    <p class="my-5">I regularly post cool content on Youtube - so make sure to head over and subscribe. If you prefer reading, I also have a blog. You can also say hi on Twitter.</p>
+    <p class="my-5">Learn more about me here or just...</p>  
+    <div class="text-right mt-12">
+      <a href="/courses"><PrimaryButton theme="primary" label="BROWSE COURSES" /></a>
+    </div>
+  </Section>
 </MainLayout>
