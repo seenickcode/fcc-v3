@@ -1,0 +1,17 @@
+---
+import PillLabel from "../components/PillLabel.astro";
+import { formatPrice } from "../utils/formatters";
+const { course } = Astro.props;
+
+---
+<div class="flex flex-row flex-wrap max-w-2xl h-72">
+    <div class="basis-1/3" style=`background-image: url(${course.thumbnail_url})` />
+    <div class="basis-2/3 px-12 py-8 bg-white dark:bg-primary text-black text-left">
+        <h3 class="">{course.name}</h3>
+        <div class="flex flex-row gap-4">
+            <PillLabel theme="active">{formatPrice(course.price)}</PillLabel>
+            <PillLabel theme="inactive">{course.level}</PillLabel>
+        </div>
+        <p class="my-10">{course.blurb}</p>
+    </div>
+</div>

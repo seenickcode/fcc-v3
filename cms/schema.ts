@@ -201,6 +201,13 @@ export interface Course extends SanityDocument {
   level?: string;
 
   /**
+   * Thumbnail URL — `string`
+   *
+   *
+   */
+  thumbnail_url?: string;
+
+  /**
    * Description — `markdown`
    *
    *

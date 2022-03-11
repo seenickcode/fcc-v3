@@ -1,4 +1,5 @@
 ---
+import { courses } from "../lib/db";
 import MainLayout from "../layouts/MainLayout.astro";
 import Section from "../layouts/PageContentWrapper.astro";
 import Separator from "../layouts/Separator.astro";
@@ -6,6 +7,7 @@ import Player from "../components/Player.tsx";
 import ValProp from "../components/ValProp.astro";
 import FilterButton from "../components/FilterButton.astro";
 import PrimaryButton from "../components/PrimaryButton.astro";
+import CourseTile from "../components/CourseTile.astro";
 import { themeColors } from "../utils/colors.ts";
 
 const skills = [
@@ -47,6 +49,8 @@ const whyRocks = [
   "Weekly best practices, tips + cool widgets FREE of charge",
   "Awesome, friendly + supportive community",
 ];
+
+const courseItems = await courses.all();
 ---
 
 <MainLayout title="Home">
@@ -59,7 +63,7 @@ const whyRocks = [
     clipPath="polygon(0 30%, 100% 60%, 100% 100%, 0 100%);"
   />
   <Section append={themeColors("accent")}>
-    <div class="text-center grid grid-cols-3">
+    <div class="text-center grid lg:grid-cols-3 sm:grid-cols-3 gap-4">
       <ValProp vals="Join|13,000|fellow students" />
       <ValProp vals="Join|13,000|fellow students" />
       <ValProp vals="Join|13,000|fellow students" />
@@ -93,7 +97,7 @@ const whyRocks = [
     clipPath="polygon(0 60%, 100% 30%, 100% 100%, 0 100%);"
   />
   <Section append={themeColors("secondary")}>
-    <h3 class="text-right">
+    <h3 class="text-right mb-8">
       Hi, I'm <span class="text-3xl">Nick</span>. Watch to see <span
         class="text-3xl">WHO THIS IS FOR</span
       > (and what you'll learn).
@@ -111,7 +115,7 @@ const whyRocks = [
       find courses here for your level.
     </p>
     <div class="text-right mt-12">
-      <a href="/courses"><PrimaryButton label="BROWSE COURSES" /></a>
+      <a href="/courses"><PrimaryButton theme="primary" label="BROWSE COURSES" /></a>
     </div>
   </Section>
   <Separator
@@ -121,8 +125,22 @@ const whyRocks = [
   />
   <Section append={themeColors("accent")}>
     <h2 class="text-center mt-6">WHY OUR COURSES ROCK!</h2>
-    <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-8">
+    <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-12 p-4">
       {whyRocks.map((v) => <li>{v}</li>)}
     </div>
+    <h2 class="mt-16 text-center">Popular Courses</h2>
+    <center>
+      <div class="flex flex-col gap-12">
+        {[courseItems[0], courseItems[1]].map((c) => <a href=`/courses/${c.slug.current}`><CourseTile course={c} /></a>)}     
+      </div>
+    </center>
+    <div class="text-center mt-20 mb-8">
+      <a href="/courses"><PrimaryButton theme="secondary" label="JUMP TO ALL COURSES" /></a>
+    </div>
   </Section>
+  <Separator
+    appendOuter={themeColors("primary")}
+    appendInner={themeColors("accent")}
+    clipPath="polygon(0 0, 100% 0, 100% 60%, 0 0);"
+  />
 </MainLayout>

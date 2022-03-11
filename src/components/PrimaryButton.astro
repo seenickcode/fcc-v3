@@ -1,9 +1,16 @@
 ---
-const { label } = Astro.props;
+
+
+const primary = "bg-accent text-white dark:bg-secondary dark:text-white hover:bg-primary hover:dark:bg-accent";
+const secondary = "bg-primary text-white dark:bg-primary dark:text-white hover:bg-secondary hover:dark:bg-accent";
+
+const { label, theme } = Astro.props;
+
+const colors = theme == "primary" ? primary : (theme == "secondary" ? secondary : "");
 ---
 
 <span
-  class="px-8 py-4 bg-accent font-sans font-light text-sm text-white dark:bg-secondary dark:text-white hover:bg-primary hover:text-white hover:dark:bg-accent"
+  class="px-8 py-4 font-sans font-light text-sm ${colors}"
 >
   {label}
 </span>

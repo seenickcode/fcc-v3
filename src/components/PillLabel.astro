@@ -1,0 +1,10 @@
+---
+const active = "bg-primary dark:bg-accent dark:text-white";
+const inactive = "bg-white dark:bg-secondary dark:text-white border-black border dark:border-secondary";
+
+const { theme } = Astro.props;
+
+const colors = theme == "active" ? active : (theme == "inactive" ? inactive : "");
+
+---
+<span class="rounded-lg font-sans font-light text-sm px-4 py-1 ${colors} uppercase"><slot /></span>

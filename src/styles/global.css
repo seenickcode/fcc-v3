@@ -14,7 +14,7 @@ body {
     @apply text-3xl mb-12;
   }
   h3 {
-    @apply text-xl mb-12;
+    @apply text-xl mb-4;
   }
 }
 

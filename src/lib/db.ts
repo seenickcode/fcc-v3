@@ -41,7 +41,7 @@ export const blogPosts = {
 export const courses = {
   async all(): Promise<Course[]> {
     const q =
-      "*[_type == 'course'] | order(seq_number) {slug, name, blurb, description, level, price, modules}"; // , lessons}";
+      "*[_type == 'course'] | order(seq_number) {slug, name, blurb, thumbnail_url, description, level, price, modules}"; // , lessons}";
     try {
       return await sanity.fetch<Course[]>(q);
     } catch (err) {
