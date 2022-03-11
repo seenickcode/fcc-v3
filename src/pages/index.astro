@@ -5,6 +5,7 @@ import Separator from "../layouts/Separator.astro";
 import Player from "../components/Player.tsx";
 import ValProp from "../components/ValProp.astro";
 import FilterButton from "../components/FilterButton.astro";
+import PrimaryButton from "../components/PrimaryButton.astro";
 import { themeColors } from "../utils/colors.ts";
 
 const skills = [
@@ -28,13 +29,29 @@ const reviews = [
   "“Honestly, your content is still the best crash course and intro to flutter fut relying on firebase to build all these apps”.",
   "“Honestly, your content is still the best crash course and intro to flutter fut relying on firebase to build all these apps”.",
 ];
+const whyRocks = [
+  "Taught by an experienced hands-on developer",
+  "Learn by creating fun, real-life engaging products",
+  "Courses for any level from absolute beginner to advanced developers",
+  "Wide variety of topics to choose from",
+  "Work at your own pace - finish as quickly or as slowly as you like",
+  "Lots of free content and affordable premium courses",
+  "Personal support if you need help or have questions",
+  "Clear pronounciation even for non-native English speakers",
+  "Crystal clear explanations of the most complex concepts",
+  "Start developing mobile apps of various difficulty levels from the start!",
+  "No fluff or unnecessary stuff - only what you need to get productive",
+  "Practical hands-on approach and just enough theory ",
+  "Friendly + warm learning environment",
+  "Production-ready code",
+  "Weekly best practices, tips + cool widgets FREE of charge",
+  "Awesome, friendly + supportive community",
+];
 ---
 
 <MainLayout title="Home">
   <Section append={themeColors("primary")}>
-    <h1 class="text-4xl">
-      LEARN PROGRAMMING BY BUILDING REAL APPS STEP BY STEP
-    </h1>
+    <h1>LEARN PROGRAMMING BY BUILDING REAL APPS STEP BY STEP</h1>
   </Section>
   <Separator
     appendOuter={themeColors("primary")}
@@ -54,7 +71,7 @@ const reviews = [
     clipPath="polygon(0 60%, 100% 30%, 100% 100%, 0 100%);"
   />
   <Section append={themeColors("secondary")}>
-    <h2 class="text-3xl text-right mb-12">Flutter Skills We Teach</h2>
+    <h2 class="text-right mb-12">Flutter Skills We Teach</h2>
     <div class="text-center grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
       {skills.map((v) => <FilterButton>{v}</FilterButton>)}
     </div>
@@ -65,7 +82,7 @@ const reviews = [
     clipPath="polygon(0 60%, 100% 30%, 100% 100%, 0 100%);"
   />
   <Section append={themeColors("primary")}>
-    <h2 class="text-3xl text-center mb-12">Community Love</h2>
+    <h2 class="text-center mb-12">Community Love</h2>
     <div class="text-center grid sm:grid-cols-2 lg:grid-cols-2 gap-16">
       {reviews.map((v) => <p>{v}</p>)}
     </div>
@@ -76,7 +93,7 @@ const reviews = [
     clipPath="polygon(0 60%, 100% 30%, 100% 100%, 0 100%);"
   />
   <Section append={themeColors("secondary")}>
-    <h3 class="text-xl text-right mb-12">
+    <h3 class="text-right">
       Hi, I'm <span class="text-3xl">Nick</span>. Watch to see <span
         class="text-3xl">WHO THIS IS FOR</span
       > (and what you'll learn).
@@ -84,13 +101,28 @@ const reviews = [
     <center>
       <Player
         client:only="preact"
-        width="600"
-        src="https://multiplatform-f.akamaihd.net/i/multi/will/bunny/big_buck_bunny_,640x360_400,640x360_700,640x360_1000,950x540_1500,.f4v.csmil/master.m3u8"
+        width="1200"
+        src="https://fluttercrashcourse.global.ssl.fastly.net/videos/285710042/playlist.m3u8"
+        poster="https://fluttercrashcourse.global.ssl.fastly.net/thumbnails/721773666_640.webp"
       />
     </center>
-    <p class="text-center pt-10">
+    <p class="text-right pt-10">
       Whether you are a complete beginner or an advanced programmer, you will
       find courses here for your level.
     </p>
+    <div class="text-right mt-12">
+      <a href="/courses"><PrimaryButton label="BROWSE COURSES" /></a>
+    </div>
+  </Section>
+  <Separator
+    appendOuter={themeColors("secondary")}
+    appendInner={themeColors("accent")}
+    clipPath="polygon(0 60%, 100% 100%, 100% 100%, 0 100%);"
+  />
+  <Section append={themeColors("accent")}>
+    <h2 class="text-center mt-6">WHY OUR COURSES ROCK!</h2>
+    <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-8">
+      {whyRocks.map((v) => <li>{v}</li>)}
+    </div>
   </Section>
 </MainLayout>

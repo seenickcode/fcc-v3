@@ -37,7 +37,7 @@ export default function Player(props) {
       controls
       width={props.width}
       class="border-solid border-8 border-primary dark:border-secondary dark:text-secondary"
-      poster="https://cdn.sanity.io/images/o8uzmguj/production/26c3619b787a371328384782217ad13b9f5c11d9-1265x712.jpg"
+      poster={props.poster}
     ></video>
   );
 }
