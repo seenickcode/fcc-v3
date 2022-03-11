@@ -37,3 +37,38 @@ export const blogPosts = {
     }
   },
 };
+
+export const courses = {
+  async all(): Promise<Course[]> {
+    const q =
+      "*[_type == 'course'] | order(seq_number) {slug, name, blurb, description, level, price, modules}"; // , lessons}";
+    try {
+      return await sanity.fetch<Course[]>(q);
+    } catch (err) {
+      console.log("sanity failed fetching all courses", err);
+      return [];
+    }
+  },
+  async allSlugs(): Promise<Course[]> {
+    const q = "*[_type == 'course']  | order(seq_number) {slug}";
+    try {
+      return await sanity.fetch<Course[]>(q);
+    } catch (err) {
+      console.error("sanity failed fetching courses", err);
+      return [];
+    }
+  },
+  async fetchBySlug(slug: string): Promise<Course> {
+    const q = `*[_type == 'course' && slug.current == '${slug}'][0]`;
+    try {
+      const course = await sanity.fetch<Course>(q);
+      if (!course) {
+        throw new Error(`sanity course with slug ${slug} not found`);
+      }
+      return course;
+    } catch (err) {
+      console.log("sanity failed fetching course", err);
+      return null;
+    }
+  },
+};

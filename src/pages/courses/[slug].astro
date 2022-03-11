@@ -1,0 +1,19 @@
+---
+import { Markdown } from "astro/components";
+import MainLayout from "../../layouts/MainLayout.astro";
+import { courses } from "../../lib/db";
+
+export async function getStaticPaths() {
+  const courseItems = await courses.allSlugs();
+  return courseItems.map((course) => ({
+    params: { slug: course.slug.current },
+  }));
+}
+
+const { slug } = Astro.request.params;
+const courseItem = await courses.fetchBySlug(slug);
+---
+
+<MainLayout title={courseItem.name}>
+  {courseItem.name}
+</MainLayout>

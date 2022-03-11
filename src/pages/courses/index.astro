@@ -1,19 +1,19 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
 import PageContentWrapper from "../../layouts/PageContentWrapper.astro";
-import { blogPosts } from "../../lib/db";
+import { courses } from "../../lib/db";
 import { themeColors } from "../../utils/colors.ts";
 
-const posts = await blogPosts.all();
+const courseItems = await courses.all();
 ---
 
 <MainLayout title="Home">
   <PageContentWrapper append={themeColors("primary")}>
-    <h1>Tutorials</h1>
+    <h1>Courses</h1>
     <div class="text-base">
-      {posts.map((p) => (
+      {courseItems.map((c) => (
         <p>
-          <a href={`/blog/${p.slug.current}`}>{p.title}</a>
+          <a href={`/courses/${c.slug.current}`}>{c.name}</a>
         </p>
       ))}
     </div>
