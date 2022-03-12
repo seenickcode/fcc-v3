@@ -63,7 +63,7 @@ const courseItems = await courses.all();
     clipPath="polygon(0 30%, 100% 60%, 100% 100%, 0 100%);"
   />
   <Section append={themeColors("accent")}>
-    <div class="text-center grid lg:grid-cols-3 sm:grid-cols-3 gap-4">
+    <div class="text-center grid lg:grid-cols-3 gap-4">
       <ValProp vals="Join|13,000|fellow students" />
       <ValProp vals="Join|13,000|fellow students" />
       <ValProp vals="Join|13,000|fellow students" />
@@ -98,8 +98,8 @@ const courseItems = await courses.all();
   />
   <Section append={themeColors("secondary")}>
     <h3 class="text-right mb-8">
-      Hi, I'm <span class="text-3xl">Nick</span>. Watch to see <span
-        class="text-3xl">WHO THIS IS FOR</span
+      Hi, I'm <span class="text-lg lg:text-3xl">Nick</span>. Watch to see <span
+        class="text-lg lg:text-3xl">WHO THIS IS FOR</span
       > (and what you'll learn).
     </h3>
     <center>
@@ -124,7 +124,7 @@ const courseItems = await courses.all();
     clipPath="polygon(0 60%, 100% 100%, 100% 100%, 0 100%);"
   />
   <Section append={themeColors("accent")}>
-    <h2 class="text-center mt-6">WHY OUR COURSES ROCK!</h2>
+    <h2 class="text-center mt-6">WHY OUR COURSES ROCK</h2>
     <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-12 p-4">
       {whyRocks.map((v) => <li>{v}</li>)}
     </div>
@@ -143,7 +143,6 @@ const courseItems = await courses.all();
     appendInner={themeColors("accent")}
     clipPath="polygon(0 0, 100% 0, 100% 30%, 0 0);"
   />
-  <div class="flex flex-col gap-6"></div>
   <Section append={themeColors("secondary")}>
     <h2 class="text-center">YOUR INSTRUCTOR</h2>
     <img src="https://fluttercrashcourse.global.ssl.fastly.net/uploads/nick-pace-5.jpg" class="mr-8 mb-4 float-left" style="width:400px;" />

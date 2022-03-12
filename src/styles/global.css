@@ -8,16 +8,16 @@ body {
 
 @layer base {
   h1 {
-    @apply text-4xl;
+    @apply text-xl lg:text-3xl;
   }
   h2 {
-    @apply text-3xl mb-12;
+    @apply text-lg lg:text-3xl mb-12;
   }
   h3 {
-    @apply text-xl mb-4;
+    @apply text-base lg:text-xl mb-4;
   }
   h4 {
-    @apply text-lg mb-4;
+    @apply text-base lg:text-lg mb-4;
   }
   h5 {
     @apply text-base mb-2;
