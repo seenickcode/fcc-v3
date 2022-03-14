@@ -12,6 +12,7 @@ import author from "./author";
 import course from "./course";
 import module from "./module";
 import lesson from "./lesson";
+import page from "./page";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -28,6 +29,7 @@ export default createSchema({
     course,
     module,
     lesson,
+    page,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     blockContent,

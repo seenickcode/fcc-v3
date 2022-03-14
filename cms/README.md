@@ -1,9 +1,32 @@
-# Sanity Clean Content Studio
+# Sanity.io
 
-Congratulations, you have now installed the Sanity Content Studio, an open source real-time content editing environment connected to the Sanity backend.
+## Making schema changes
 
-Now you can do the following things:
+Any updates to sanity.io schemas will need codegen, which will re-generate `cms/schema.ts`. More info [here](https://www.sanity.io/plugins/sanity-codegen)
 
-- [Read “getting started” in the docs](https://www.sanity.io/docs/introduction/getting-started?utm_source=readme)
-- [Join the community Slack](https://slack.sanity.io/?utm_source=readme)
-- [Extend and build plugins](https://www.sanity.io/docs/content-studio/extending?utm_source=readme)
+1. Edit `schemas/schema
+2. In the project root, run `npx sanity-codegen`
+3. Ensure the new changes look ok in the studio: `cd cms && sanity start`
+4. To deploy the schema, run `sanity deploy`
+
+#### Additional Plugins/Features Used
+
+- [Markdown plugin](https://www.sanity.io/plugins/sanity-plugin-markdown)
+- [Data Studio Spaces](https://www.sanity.io/docs/spaces)
+- [Codegen](https://www.sanity.io/plugins/sanity-codegen) (we use this at root project level, not via the `cms` dir)
+
+Use your Github login.
+
+[Manage projects](https://www.sanity.io/manage)
+
+You can either run `sanity start` or use [Sanity Studio](https://fluttercrashcourse.sanity.studio/desk) can be used to manage content.
+
+[Query playground](https://www.sanity.io/docs/the-vision-plugin) how-to.
+
+#### Example Query
+
+Input the following at [](https://groq.dev/):
+
+`https://o8uzmguj.api.sanity.io/v1/data/query/production?query=*[_type == 'post']`
+
+[Query cheat sheet](https://www.sanity.io/docs/query-cheat-sheet)

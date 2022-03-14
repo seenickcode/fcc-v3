@@ -1,0 +1,35 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import { sanity } from "../lib/db.ts";
+import type { Page } from "../../cms/schema";
+import { BlockText } from "../components/BlockText.tsx"
+
+export async function getStaticPaths() {
+  let pages;
+  try {
+    pages = await sanity.fetch<Page[]>("*[_type == 'page']  | order(_createdAt asc) {slug}");
+    console.log('pages', pages);
+  } catch (err) {
+    console.error("sanity failed fetching pages", err);
+    return [];
+  }
+  console.log(pages.map((page) => ({ params: { slug: page.slug.current } })));
+  return pages.map((page) => ({ params: { slug: page.slug.current } }));
+}
+
+const { slug } = Astro.request.params;
+let page;
+try {
+  page = await sanity.fetch<Page>(`*[_type == 'page' && slug.current == '${slug}'][0]`);
+} catch (err) {
+  console.error("sanity failed fetching page", err);
+}
+---
+
+<MainLayout title={slug}>
+  <h1>{page.name}</h1>
+  <BlockText
+    client:only="react"
+    value={page.text}
+  />
+</MainLayout>

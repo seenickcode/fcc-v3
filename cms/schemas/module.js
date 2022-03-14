@@ -28,7 +28,7 @@ export default {
     {
       name: "description",
       title: "Description",
-      type: "markdown",
+      type: "block",
     },
     {
       name: "seq_number",

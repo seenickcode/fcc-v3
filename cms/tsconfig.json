@@ -6,6 +6,6 @@
     "./node_modules/@sanity/base/types/**/*.ts",
     "./**/*.ts",
     "./**/*.tsx",
-    "../sanity-codegen.config.ts"
+    "sanity-codegen.config.ts"
   ]
 }

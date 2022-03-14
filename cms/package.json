@@ -8,23 +8,41 @@
   "license": "UNLICENSED",
   "scripts": {
     "start": "sanity start",
-    "build": "sanity build"
+    "build": "sanity build",
+    "postinstall": "npm-install-peers"
   },
   "keywords": [
     "sanity"
   ],
   "dependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
     "@sanity/base": "^2.22.3",
+    "@sanity/color": "^2.1.8",
     "@sanity/core": "^2.22.3",
+    "@sanity/data-aspects": "^2.27.0",
     "@sanity/default-layout": "^2.22.5",
     "@sanity/default-login": "^2.22.3",
     "@sanity/desk-tool": "^2.22.5",
+    "@sanity/form-builder": "^2.28.2",
     "@sanity/vision": "^2.22.3",
+    "@types/react": "^17.0.40",
+    "caniuse-lite": "^1.0.30001315",
+    "jsdom": "^19.0.0",
+    "npm-install-peers": "^1.2.2",
     "prop-types": "^15.7",
-    "react": "^17.0",
-    "react-dom": "^17.0",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "react-is": "^17.0.2",
     "sanity-plugin-dark-theme-blue": "^1.0.1",
     "sanity-plugin-markdown": "^2.1.1",
-    "styled-components": "^5.2.0"
+    "styled-components": "^5.2.0",
+    "webpack": "^5.70.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.5.1",
+    "sanity-codegen": "^0.9.8"
   }
 }

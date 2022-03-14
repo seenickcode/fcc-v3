@@ -92,11 +92,11 @@ export interface Post extends SanityDocument {
   publishedAt?: string;
 
   /**
-   * Body — `markdown`
+   * Body — `block`
    *
    *
    */
-  body?: Markdown;
+  body?: SanityBlock;
 }
 
 /**
@@ -208,11 +208,11 @@ export interface Course extends SanityDocument {
   thumbnail_url?: string;
 
   /**
-   * Description — `markdown`
+   * Description — `block`
    *
    *
    */
-  description?: Markdown;
+  description?: SanityBlock;
 
   /**
    * Price — `number`
@@ -315,11 +315,11 @@ export interface Module extends SanityDocument {
   thumbnail_url?: string;
 
   /**
-   * Description — `markdown`
+   * Description — `block`
    *
    *
    */
-  description?: Markdown;
+  description?: SanityBlock;
 
   /**
    * Sequence Number — `number`
@@ -380,11 +380,11 @@ export interface Lesson extends SanityDocument {
   video_id?: string;
 
   /**
-   * Show Notes — `markdown`
+   * Show Notes — `block`
    *
    *
    */
-  show_notes?: Markdown;
+  show_notes?: SanityBlock;
 
   /**
    * Is Public — `boolean`
@@ -429,6 +429,36 @@ export interface Lesson extends SanityDocument {
   publishedAt?: string;
 }
 
+/**
+ * Page
+ *
+ *
+ */
+export interface Page extends SanityDocument {
+  _type: "page";
+
+  /**
+   * Name — `string`
+   *
+   *
+   */
+  name?: string;
+
+  /**
+   * Slug — `slug`
+   *
+   *
+   */
+  slug?: { _type: "slug"; current: string };
+
+  /**
+   * Text — `array`
+   *
+   *
+   */
+  text?: Array<SanityKeyed<SanityBlock>>;
+}
+
 export type BlockContent = Array<
   | SanityKeyed<SanityBlock>
   | SanityKeyed<{
@@ -439,11 +469,11 @@ export type BlockContent = Array<
     }>
 >;
 
-export type Documents = Post | Author | Category | Course | Module | Lesson;
-
-/**
- * This interface is a stub. It was referenced in your sanity schema but
- * the definition was not actually found. Future versions of
- * sanity-codegen will let you type this explicity.
- */
-type Markdown = any;
+export type Documents =
+  | Post
+  | Author
+  | Category
+  | Course
+  | Module
+  | Lesson
+  | Page;
