@@ -33,7 +33,7 @@ export default {
     {
       name: "description",
       title: "Description",
-      type: "block",
+      type: "markdown",
     },
     {
       name: "price",

@@ -38,6 +38,7 @@
     "react-is": "^17.0.2",
     "sanity-plugin-dark-theme-blue": "^1.0.1",
     "sanity-plugin-markdown": "^2.1.1",
+    "sanity-plugin-order-documents": "^0.0.22",
     "styled-components": "^5.2.0",
     "webpack": "^5.70.0"
   },

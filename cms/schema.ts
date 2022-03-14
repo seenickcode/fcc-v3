@@ -92,11 +92,11 @@ export interface Post extends SanityDocument {
   publishedAt?: string;
 
   /**
-   * Body — `block`
+   * Body — `markdown`
    *
    *
    */
-  body?: SanityBlock;
+  body?: Markdown;
 }
 
 /**
@@ -208,11 +208,11 @@ export interface Course extends SanityDocument {
   thumbnail_url?: string;
 
   /**
-   * Description — `block`
+   * Description — `markdown`
    *
    *
    */
-  description?: SanityBlock;
+  description?: Markdown;
 
   /**
    * Price — `number`
@@ -380,11 +380,11 @@ export interface Lesson extends SanityDocument {
   video_id?: string;
 
   /**
-   * Show Notes — `block`
+   * Show Notes — `markdown`
    *
    *
    */
-  show_notes?: SanityBlock;
+  show_notes?: Markdown;
 
   /**
    * Is Public — `boolean`
@@ -452,11 +452,18 @@ export interface Page extends SanityDocument {
   slug?: { _type: "slug"; current: string };
 
   /**
-   * Text — `array`
+   * Body — `blockContent`
    *
    *
    */
-  text?: Array<SanityKeyed<SanityBlock>>;
+  body?: BlockContent;
+
+  /**
+   * Order — `number`
+   *
+   *
+   */
+  order?: number;
 }
 
 export type BlockContent = Array<
@@ -477,3 +484,10 @@ export type Documents =
   | Module
   | Lesson
   | Page;
+
+/**
+ * This interface is a stub. It was referenced in your sanity schema but
+ * the definition was not actually found. Future versions of
+ * sanity-codegen will let you type this explicity.
+ */
+type Markdown = any;

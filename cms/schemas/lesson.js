@@ -29,7 +29,7 @@ export default {
     {
       name: "show_notes",
       title: "Show Notes",
-      type: "block",
+      type: "markdown",
     },
     {
       name: "public",

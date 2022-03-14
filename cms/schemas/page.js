@@ -14,16 +14,28 @@ export default {
       type: "slug",
     },
     {
-      title: "Text",
-      name: "text",
-      type: "array",
-      of: [{ type: "block" }],
+      name: "body",
+      title: "Body",
+      type: "blockContent",
+    },
+    {
+      name: "order",
+      title: "Order",
+      type: "number",
+      hidden: true,
     },
   ],
-
+  orderings: [
+    {
+      title: "Order",
+      name: "order",
+      by: [{ field: "order", direction: "asc" }],
+    },
+  ],
   preview: {
     select: {
       title: "name",
+      subtitle: "body",
     },
   },
 };
