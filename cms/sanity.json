@@ -32,8 +32,7 @@
     "@sanity/default-login",
     "@sanity/desk-tool",
     "markdown",
-    "order-documents",
-    "dark-theme-blue"
+    "order-documents"
   ],
   "env": {
     "development": {
