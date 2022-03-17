@@ -11,6 +11,12 @@ const { title } = Astro.props;
 
 <html lang="en">
   <head>
+    <script type="text/javascript">
+      const val = localStorage.getItem("dark-mode");
+      if (val == "1" || window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        document.documentElement.classList.add("dark");
+      }
+    </script>
     <BaseHead {title} description="" permalink="" />
   </head>
   <body>
@@ -25,7 +31,11 @@ const { title } = Astro.props;
         >
           <a href="/"><Logo /></a>
           <div class="flex flex-col flex-wrap items-end space-y-4 text-base">
-            <DarkModeToggle client:only="preact" />
+            <div>
+              <!-- placeholder to avoid layout moving -->
+              <span>&nbsp;</span>
+              <DarkModeToggle client:only="preact" />
+            </div>
             <Nav />
           </div>
         </div>

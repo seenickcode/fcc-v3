@@ -10,7 +10,7 @@ const { title, description, permalink } = Astro.props;
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- <link rel="icon" type="image/x-icon" href="/favicon.ico" /> -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 <!-- NOTE this would be in the static dir -->
 
 <!-- Primary Meta Tags -->
@@ -32,16 +32,4 @@ const { title, description, permalink } = Astro.props;
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content="https://astro.build/social.jpg?v=1" />
 
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.gstatic.com" />
-<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;700&display=swap"> -->
-
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap"
-  rel="stylesheet"
-/>
-
 <link rel="stylesheet" href={Astro.resolve("../styles/global.css")} />
-<!-- <link rel="stylesheet" href={Astro.resolve('../../node_modules/@themesberg/flowbite/dist/flowbite.min.css')} /> -->

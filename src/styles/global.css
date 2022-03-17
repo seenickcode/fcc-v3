@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Zen Dots";
+  src: url("/assets/fonts/ZenDots-Regular.woff2") format("woff2"),
+    url("/assets/fonts/ZenDots-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   font-family: "Courier New";
 }
@@ -31,7 +40,7 @@ h4,
 h5,
 h6,
 .nav {
-  font-family: "Zen Dots", cursive;
+  @apply font-ZenDots;
 }
 
 /* hides video spinner */

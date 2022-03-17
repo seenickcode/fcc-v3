@@ -12,6 +12,9 @@ module.exports = {
         secondary: "#1A1640", // dark purple
         accent: "#4E44AF", // medium purple
       },
+      fontFamily: {
+        ZenDots: ["Zen Dots"],
+      },
     },
   },
 };
