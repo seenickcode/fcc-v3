@@ -2,12 +2,12 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import { sanity } from "../lib/db.ts";
 import type { Page } from "../../cms/schema";
-import { BlockText } from "../components/BlockText.tsx"
+import BlockText from "../components/BlockText.tsx"
 
 export async function getStaticPaths() {
   let pages;
   try {
-    pages = await sanity.fetch<Page[]>("*[_type == 'page']  | order(_createdAt asc) {slug}");
+    pages = await sanity.fetch<Page[]>("*[_type == 'page'] | order(_createdAt asc) {slug}");
     console.log('pages', pages);
   } catch (err) {
     console.error("sanity failed fetching pages", err);
@@ -17,17 +17,15 @@ export async function getStaticPaths() {
 }
 
 const { slug } = Astro.request.params;
-let page;
+let page = "hi";
 try {
   page = await sanity.fetch<Page>(`*[_type == 'page' && slug.current == '${slug}'][0]`);
-  console.log(JSON.stringify(page));
 } catch (err) {
   console.error("sanity failed fetching page", err);
 }
 ---
 
 <MainLayout title={slug}>
-  <h1>{page.name}</h1>
   <BlockText
     value={page.body}
   />

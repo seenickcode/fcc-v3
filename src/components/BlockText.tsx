@@ -1,8 +1,13 @@
-import { Component } from "react";
+import React from "react";
 import { PortableText } from "@portabletext/react";
+import { urlFor } from "../utils/formatters";
 
-export class BlockText extends Component {
-  render() {
-    return <PortableText value={this.props.value} />;
-  }
+export default function BlockText(props) {
+  const components = {
+    types: {
+      image: ({ value }) => <img src={urlFor(value)} />,
+    },
+  };
+
+  return <PortableText value={props.value} components={components} />;
 }

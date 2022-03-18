@@ -1,4 +1,5 @@
 import sanityClient from "@sanity/client";
+import imageUrlBuilder from "@sanity/image-url";
 import type { Course, Post } from "../../cms/schema";
 
 export const sanity = sanityClient({
@@ -7,6 +8,8 @@ export const sanity = sanityClient({
   apiVersion: "2021-07-23",
   useCdn: true,
 });
+
+export const sanityBuilder = imageUrlBuilder(sanity);
 
 export const blogPosts = {
   async all(): Promise<Post[]> {
