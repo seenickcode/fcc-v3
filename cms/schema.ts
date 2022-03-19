@@ -52,6 +52,20 @@ export interface Post extends SanityDocument {
   title?: string;
 
   /**
+   * SEO Meta Description — `string`
+   *
+   *
+   */
+  meta_description?: string;
+
+  /**
+   * SEO Meta Keywords — `string`
+   *
+   *
+   */
+  meta_keywords?: string;
+
+  /**
    * Slug — `slug`
    *
    *
@@ -474,6 +488,7 @@ export type BlockContent = Array<
       crop?: SanityImageCrop;
       hotspot?: SanityImageHotspot;
     }>
+  | SanityKeyed<Code>
 >;
 
 export type Documents =
@@ -491,3 +506,10 @@ export type Documents =
  * sanity-codegen will let you type this explicity.
  */
 type Markdown = any;
+
+/**
+ * This interface is a stub. It was referenced in your sanity schema but
+ * the definition was not actually found. Future versions of
+ * sanity-codegen will let you type this explicity.
+ */
+type Code = any;

@@ -20,6 +20,7 @@
     "@babel/preset-react": "^7.16.7",
     "@babel/preset-typescript": "^7.16.7",
     "@sanity/base": "^2.22.3",
+    "@sanity/code-input": "^2.29.1",
     "@sanity/color": "^2.1.8",
     "@sanity/core": "^2.22.3",
     "@sanity/data-aspects": "^2.27.0",

@@ -2,11 +2,13 @@ import sanityClient from "@sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
 import type { Course, Post } from "../../cms/schema";
 
+const isProd = JSON.parse(import.meta.env.PUBLIC_IS_PROD.toString());
+
 export const sanity = sanityClient({
   projectId: import.meta.env.PUBLIC_SANITY_ID.toString(),
   dataset: import.meta.env.PUBLIC_SANITY_DATASET.toString(),
   apiVersion: "2021-07-23",
-  useCdn: true,
+  useCdn: isProd,
 });
 
 export const sanityBuilder = imageUrlBuilder(sanity);

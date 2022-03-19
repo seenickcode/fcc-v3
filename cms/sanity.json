@@ -32,11 +32,14 @@
     "@sanity/default-login",
     "@sanity/desk-tool",
     "markdown",
-    "order-documents"
+    "order-documents",
+    "@sanity/code-input"
   ],
   "env": {
     "development": {
-      "plugins": ["@sanity/vision"]
+      "plugins": [
+        "@sanity/vision"
+      ]
     }
   },
   "parts": [

@@ -15,6 +15,7 @@ specifiers:
   preact: ^10.5.15
   prettier: 2.5.1
   prettier-plugin-astro: ^0.0.12
+  prism-react-renderer: ^1.3.1
   react: ^17.0.0
   rollbar: ^2.24.0
   tailwindcss: ^3.0.7
@@ -28,6 +29,7 @@ dependencies:
   hls.js: 1.1.5
   jsdom: 19.0.0
   postcss: 8.4.8
+  prism-react-renderer: 1.3.1_react@17.0.2
   react: 17.0.2
 
 devDependencies:
@@ -4130,6 +4132,14 @@ packages:
   /pretty-format/3.8.0:
     resolution: {integrity: sha1-v77VbV6ad2ZF9LH/eqGjrE+jw4U=}
     dev: true
+
+  /prism-react-renderer/1.3.1_react@17.0.2:
+    resolution: {integrity: sha512-xUeDMEz074d0zc5y6rxiMp/dlC7C+5IDDlaEUlcBOFE2wddz7hz5PNupb087mPwTt7T9BrFmewObfCBuf/LKwQ==}
+    peerDependencies:
+      react: '>=0.14.9'
+    dependencies:
+      react: 17.0.2
+    dev: false
 
   /prismjs/1.25.0:
     resolution: {integrity: sha512-WCjJHl1KEWbnkQom1+SzftbtXMKQoezOCYs5rECqMN+jP+apI7ftoflyqigqzopSO3hMhTEb0mFClA8lkolgEg==}

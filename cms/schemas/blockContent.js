@@ -1,3 +1,6 @@
+import { SUPPORTED_LANGUAGES } from "@sanity/code-input/lib/config";
+import "ace-builds/src-noconflict/mode-dart";
+
 /**
  * This is the schema definition for the rich text fields used for
  * for this blog studio. When you import it in schemas.js it can be
@@ -36,6 +39,9 @@ export default {
         decorators: [
           { title: "Strong", value: "strong" },
           { title: "Emphasis", value: "em" },
+          { title: "Code", value: "code" },
+          { title: "Underline", value: "underline" },
+          { title: "Strike", value: "strike-through" },
         ],
         // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [
@@ -60,6 +66,16 @@ export default {
     {
       type: "image",
       options: { hotspot: true },
+    },
+    {
+      type: "code",
+      options: {
+        theme: "solarized_dark",
+        // language: "dart",
+        languageAlternatives: SUPPORTED_LANGUAGES.concat([
+          { title: "Dart", value: "dart", mode: "dart" },
+        ]).sort((a, b) => (a.title > b.title ? 1 : -1)),
+      },
     },
   ],
 };
