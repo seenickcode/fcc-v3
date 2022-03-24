@@ -2,6 +2,7 @@ import React from "react";
 import Highlight, { defaultProps } from "prism-react-renderer";
 import { PortableText as _PortableText } from "@portabletext/react";
 import { urlFor } from "../utils/formatters";
+import Prism from "../utils/prism.js";
 
 export default function PortableText(props) {
   const components = {
@@ -13,6 +14,7 @@ export default function PortableText(props) {
       code: ({ value }) => (
         <Highlight
           {...defaultProps}
+          Prism={Prism}
           code={value.code}
           language={value.language}
         >
