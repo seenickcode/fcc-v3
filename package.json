@@ -23,7 +23,6 @@
   "dependencies": {
     "@astrojs/renderer-react": "^0.5.0",
     "@babel/core": "^7.17.7",
-    "@portabletext/react": "^1.0.4",
     "@sanity/image-url": "^1.0.1",
     "@types/react": "^17.0.42",
     "highlight.js": "^11.5.0",
@@ -34,7 +33,6 @@
     "react": "^17.0.0",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
-    "react-highlight": "^0.14.0",
     "react-markdown": "^8.0.1"
   }
 }

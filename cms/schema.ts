@@ -111,13 +111,6 @@ export interface Post extends SanityDocument {
    *
    */
   body?: Markdown;
-
-  /**
-   * Content — `blockContent`
-   *
-   *
-   */
-  content?: BlockContent;
 }
 
 /**

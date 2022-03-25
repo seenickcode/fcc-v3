@@ -1,9 +1,7 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
-import { Markdown } from "astro/components";
 import { sanity } from "/src/lib/db.ts";
 import type { Post } from "/cms/schema.ts";
-import { blogPosts } from "../../lib/db";
 import Section from "../../layouts/PageContentWrapper.astro";
 import BlockContent from "../../components/BlockContent.tsx"
 import { themeColors } from "/src/utils/colors.ts";
@@ -13,17 +11,14 @@ export async function getStaticPaths() {
   return items.map((item) => ({ params: { slug: item.slug.current } }));
 }
 
-debugger
 const { slug } = Astro.request.params;
-const post = await blogPosts.fetchBySlug(slug);
-
-// const post = await sanity.fetch<Post>(`*[_type == 'post' && slug.current == '${slug}'][0]`);
+const post = await sanity.fetch<Post>(`*[_type == 'post' && slug.current == '${slug}'][0]`);
 ---
 
 <MainLayout title={post.title}>
   <Section append={themeColors("secondary")}>
     <BlockContent
-      content={post.content}
+      content={post.body}
       client:only="react"
     />
   </Section>
