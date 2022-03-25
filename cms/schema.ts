@@ -111,6 +111,13 @@ export interface Post extends SanityDocument {
    *
    */
   body?: Markdown;
+
+  /**
+   * Content — `blockContent`
+   *
+   *
+   */
+  content?: BlockContent;
 }
 
 /**
@@ -457,6 +464,20 @@ export interface Page extends SanityDocument {
    *
    */
   name?: string;
+
+  /**
+   * SEO Meta Description — `string`
+   *
+   *
+   */
+  meta_description?: string;
+
+  /**
+   * SEO Meta Keywords — `string`
+   *
+   *
+   */
+  meta_keywords?: string;
 
   /**
    * Slug — `slug`

@@ -9,6 +9,16 @@ export default {
       type: "string",
     },
     {
+      name: "meta_description",
+      title: "SEO Meta Description",
+      type: "string",
+    },
+    {
+      name: "meta_keywords",
+      title: "SEO Meta Keywords",
+      type: "string",
+    },
+    {
       name: "slug",
       title: "Slug",
       type: "slug",

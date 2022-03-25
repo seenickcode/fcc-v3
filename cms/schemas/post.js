@@ -57,6 +57,11 @@ export default {
       title: "Body",
       type: "markdown",
     },
+    {
+      name: "content",
+      title: "Content",
+      type: "blockContent",
+    },
   ],
 
   preview: {

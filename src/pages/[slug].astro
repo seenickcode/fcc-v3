@@ -3,34 +3,21 @@ import MainLayout from "../layouts/MainLayout.astro";
 import { sanity } from "../lib/db.ts";
 import type { Page } from "../../cms/schema";
 import Section from "../layouts/PageContentWrapper.astro";
-import PortableText from "../components/PortableText"
+import BlockContent from "../components/BlockContent.tsx"
 import { themeColors } from "../utils/colors.ts";
 
 export async function getStaticPaths() {
-  let pages;
-  try {
-    pages = await sanity.fetch<Page[]>("*[_type == 'page'] | order(_createdAt asc) {slug}");
-    console.log('pages', pages);
-  } catch (err) {
-    console.error("sanity failed fetching pages", err);
-    return [];
-  }
-  return pages.map((page) => ({ params: { slug: page.slug.current } }));
+  const items = await sanity.fetch<Page[]>("*[_type == 'page'] | order(_createdAt asc) {slug}");
+  return items.map((item) => ({ params: { slug: item.slug.current } }));
 }
 
 const { slug } = Astro.request.params;
-let page;
-try {
-  page = await sanity.fetch<Page>(`*[_type == 'page' && slug.current == '${slug}'][0]`);
-  console.log(page);
-} catch (err) {
-  console.error("sanity failed fetching page", err);
-}
+const page = await sanity.fetch<Page>(`*[_type == 'page' && slug.current == '${slug}'][0]`);
 ---
 
 <MainLayout title={slug}>
   <Section append={themeColors("secondary")}>
-    <PortableText
+    <BlockContent
       value={page.body}
       client:only="react"
     />

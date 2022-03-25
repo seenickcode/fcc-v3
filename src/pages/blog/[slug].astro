@@ -1,25 +1,30 @@
 ---
-import { Markdown } from "astro/components";
 import MainLayout from "../../layouts/MainLayout.astro";
+import { Markdown } from "astro/components";
+import { sanity } from "/src/lib/db.ts";
+import type { Post } from "/cms/schema.ts";
 import { blogPosts } from "../../lib/db";
+import Section from "../../layouts/PageContentWrapper.astro";
+import BlockContent from "../../components/BlockContent.tsx"
+import { themeColors } from "/src/utils/colors.ts";
 
 export async function getStaticPaths() {
-  const posts = await blogPosts.allSlugs();
-  return posts.map((post) => ({ params: { slug: post.slug.current } }));
+  const items = await sanity.fetch<Post[]>("*[_type == 'post'] | order(_createdAt asc) {slug}");
+  return items.map((item) => ({ params: { slug: item.slug.current } }));
 }
 
+debugger
 const { slug } = Astro.request.params;
 const post = await blogPosts.fetchBySlug(slug);
+
+// const post = await sanity.fetch<Post>(`*[_type == 'post' && slug.current == '${slug}'][0]`);
 ---
 
 <MainLayout title={post.title}>
-  <div
-    class="w-full flex flex-col items-center bg-white text-black dark:bg-secondary dark:text-primary"
-  >
-    <div class="w-full max-w-[1080px] px-5 py-8">
-      <Markdown>
-        {post.body}
-      </Markdown>
-    </div>
-  </div>
+  <Section append={themeColors("secondary")}>
+    <BlockContent
+      content={post.content}
+      client:only="react"
+    />
+  </Section>
 </MainLayout>

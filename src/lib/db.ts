@@ -23,16 +23,8 @@ export const blogPosts = {
       return [];
     }
   },
-  async allSlugs(): Promise<Post[]> {
-    const q = "*[_type == 'post']  | order(_createdAt desc) {slug}";
-    try {
-      return await sanity.fetch<Post[]>(q);
-    } catch (err) {
-      console.error("sanity failed fetching posts", err);
-      return [];
-    }
-  },
   async fetchBySlug(slug: string): Promise<Post> {
+    debugger;
     const q = `*[_type == 'post' && slug.current == '${slug}'][0]`;
     try {
       return await sanity.fetch<Post>(q);

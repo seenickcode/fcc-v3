@@ -2197,10 +2197,10 @@
     shallow-equals "^1.0.0"
     use-device-pixel-ratio "^1.1.0"
 
-"@sanity/base@2.29.1":
-  version "2.29.1"
-  resolved "https://registry.npmjs.org/@sanity/base/-/base-2.29.1.tgz#1a722ff0acf04a666c076bcfc6478f0f73a292fa"
-  integrity sha512-B3lcqN3yddfBVLVHqI2wzw+RmAiuL+3JmYhJ+NbFr1MQfTEq1SZ38Dg34dsIyBZVkCmmd0kmV79ct8K8xvVbng==
+"@sanity/base@2.29.2":
+  version "2.29.2"
+  resolved "https://registry.npmjs.org/@sanity/base/-/base-2.29.2.tgz#71736721f71ec8c3f43d2efe354974d59910e720"
+  integrity sha512-RTJStJdV0+ZCI3w8eSb0Z5I81kdvk7JNME7ssnAEcak5IytWe/xAdjezjNtnjgnzE3WJ2bv4ciRoO4U8icXsaw==
   dependencies:
     "@juggle/resize-observer" "^3.3.1"
     "@popperjs/core" "^2.5.4"
@@ -2308,13 +2308,13 @@
     object-assign "^4.1.1"
     rxjs "^6.0.0"
 
-"@sanity/code-input@^2.29.1":
-  version "2.29.1"
-  resolved "https://registry.npmjs.org/@sanity/code-input/-/code-input-2.29.1.tgz#957bb6490d23e0ac04081713cd7230a13f9da6ce"
-  integrity sha512-L/R4WeWCAlckAB3QeEkTE8/Eg2InyJOK10RPBRIALePxZTrQV84ArddDCyzoB34Hg9erRxTHd9EQwGifrZpzgg==
+"@sanity/code-input@^2.29.2":
+  version "2.29.2"
+  resolved "https://registry.npmjs.org/@sanity/code-input/-/code-input-2.29.2.tgz#0031525232e2bde17d8f936295110894a05d0b49"
+  integrity sha512-YW7cIRofs3AijpglrIpfExbs187pbbHKbwQbFG8NKyXAbqpe189ijGt4Wz5DI/aWYxEzT7UL4EId0Rxndcp0vw==
   dependencies:
     "@reach/auto-id" "^0.13.2"
-    "@sanity/base" "2.29.1"
+    "@sanity/base" "2.29.2"
     "@sanity/icons" "^1.2.1"
     "@sanity/types" "2.28.0"
     "@sanity/ui" "^0.37.2"
