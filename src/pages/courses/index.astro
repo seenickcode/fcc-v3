@@ -1,6 +1,6 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
-import PageContentWrapper from "../../layouts/PageContentWrapper.astro";
+import PageContentWrapper from "../../components/PageContentWrapper.astro";
 import { courses } from "../../lib/db";
 import { themeColors } from "../../utils/colors.ts";
 
@@ -8,7 +8,7 @@ const courseItems = await courses.all();
 ---
 
 <MainLayout title="Home">
-  <PageContentWrapper append={themeColors("primary")}>
+  <PageContentWrapper append={themeColors("base")}>
     <h1>Courses</h1>
     <div class="text-base">
       {courseItems.map((c) => (

@@ -1,5 +1,4 @@
 import { SUPPORTED_LANGUAGES } from "@sanity/code-input/lib/config";
-import "ace-builds/src-noconflict/mode-dart";
 
 /**
  * This is the schema definition for the rich text fields used for
@@ -67,15 +66,17 @@ export default {
       type: "image",
       options: { hotspot: true },
     },
-    {
-      type: "code",
-      options: {
-        theme: "solarized_dark",
-        // language: "dart",
-        languageAlternatives: SUPPORTED_LANGUAGES.concat([
-          { title: "Dart", value: "dart", mode: "dart" },
-        ]).sort((a, b) => (a.title > b.title ? 1 : -1)),
-      },
-    },
+    // was used for embedding dart code in portabletext
+    // import "ace-builds/src-noconflict/mode-dart";
+    // {
+    //   type: "code",
+    //   options: {
+    //     theme: "solarized_dark",
+    //     // language: "dart",
+    //     languageAlternatives: SUPPORTED_LANGUAGES.concat([
+    //       { title: "Dart", value: "dart", mode: "dart" },
+    //     ]).sort((a, b) => (a.title > b.title ? 1 : -1)),
+    //   },
+    // },
   ],
 };

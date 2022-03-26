@@ -1,23 +1,49 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Logo from "../components/Logo.astro";
-import Nav from "../components/Nav.astro";
-import DarkModeToggle from "../components/DarkModeToggle.tsx";
-import PageContentWrapper from "../layouts/PageContentWrapper.astro";
+import Logo from "../components/nav/Logo.astro";
+import Nav from "../components/nav/Nav.astro";
+import DarkModeToggle from "../components/nav/DarkModeToggle.tsx";
+import PageContentWrapper from "../components/PageContentWrapper.astro";
 import { themeColors } from "../utils/colors.ts";
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <html lang="en">
   <head>
     <script type="text/javascript">
       const val = localStorage.getItem("dark-mode");
-      if (val == "1" || window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      console.log('val is', val);
+      if ((!val && window.matchMedia("(prefers-color-scheme: dark)").matches) || val == "1") {
         document.documentElement.classList.add("dark");
       }
     </script>
-    <BaseHead {title} description="" permalink="" />
+    
+    <!-- Global Metadata -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <!-- NOTE this would be in the static dir -->
+
+    <!-- Primary Meta Tags -->
+    <title>{`${title} - The Flutter Crash Course`}</title>
+    <meta name="title" content={`${title} - The Flutter Crash Course`} />
+    <meta name="description" content={description} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <!-- <meta property="og:url" content={permalink} /> TODO needed? -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://astro.build/social.jpg?v=1" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <!-- <meta property="twitter:url" content={permalink} /> TODO needed? -->
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content="https://astro.build/social.jpg?v=1" />
+
+    <link rel="stylesheet" href={Astro.resolve("../styles/global.css")} />
   </head>
   <body>
     <div class="flex flex-col">
@@ -30,7 +56,7 @@ const { title } = Astro.props;
           class="w-full max-w-[1080px] flex flex-row flex-wrap justify-between px-5 py-8"
         >
           <a href="/"><Logo /></a>
-          <div class="flex flex-col flex-wrap items-end space-y-4 text-base">
+          <div class="flex flex-col flex-wrap items-end space-y-4 text-accent">
             <div>
               <!-- placeholder to avoid layout moving -->
               <span>&nbsp;</span>
@@ -44,7 +70,7 @@ const { title } = Astro.props;
         <!-- TODO consider footer https://stackoverflow.com/questions/65976223/how-to-use-calc-in-tailwind-css -->
         <slot />
         <PageContentWrapper append={themeColors("primary")}>
-          <p>footer</p>
+          <p></p>
         </PageContentWrapper>
       </div>
     </div>

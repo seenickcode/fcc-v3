@@ -1,21 +1,24 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
-import PageContentWrapper from "../../layouts/PageContentWrapper.astro";
+import PageContentWrapper from "/src/components/PageContentWrapper.astro";
 import type { Post } from "/cms/schema.ts";
 import { themeColors } from "../../utils/colors.ts";
 import { sanity } from "/src/lib/db.ts";
+import { urlFor } from "../../utils/formatters";
 
-const posts = await sanity.fetch<Post>("*[_type == 'post'] | order(_createdAt desc) {slug, title}");
+const posts = await sanity.fetch<Post>("*[_type == 'post'] | order(_createdAt desc) {slug, title, mainImage}");
 ---
 
 <MainLayout title="Home">
-  <PageContentWrapper append={themeColors("primary")}>
+  <PageContentWrapper append={themeColors("base")}>
     <h1>Tutorials</h1>
-    <div class="text-base">
+    <div class="flex flex-col space-y-8">
       {posts.map((p) => (
-        <p>
-          <a href={`/blog/${p.slug.current}`}>{p.title}</a>
-        </p>
+        <div class="flex flex-row justify-items-center content-center">
+          <div><img src={p.mainImage ? urlFor(p.mainImage).width(200).fit('crop').url() : ""} class="" /></div>
+          <div>&nbsp;</div>
+          <div><h2 class="text-md m-0 text-accent dark:text-primary font-sans"><a href={`/blog/${p.slug.current}`}>{p.title}</a></h2></div>
+        </div>
       ))}
     </div>
   </PageContentWrapper>

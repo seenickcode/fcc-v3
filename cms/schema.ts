@@ -502,7 +502,6 @@ export type BlockContent = Array<
       crop?: SanityImageCrop;
       hotspot?: SanityImageHotspot;
     }>
-  | SanityKeyed<Code>
 >;
 
 export type Documents =
@@ -520,10 +519,3 @@ export type Documents =
  * sanity-codegen will let you type this explicity.
  */
 type Markdown = any;
-
-/**
- * This interface is a stub. It was referenced in your sanity schema but
- * the definition was not actually found. Future versions of
- * sanity-codegen will let you type this explicity.
- */
-type Code = any;

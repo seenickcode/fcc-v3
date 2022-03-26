@@ -1,13 +1,13 @@
 ---
 import { courses } from "../lib/db";
 import MainLayout from "../layouts/MainLayout.astro";
-import Section from "../layouts/PageContentWrapper.astro";
-import Separator from "../layouts/Separator.astro";
+import Section from "../components/PageContentWrapper.astro";
+import Separator from "../components/Separator.astro";
 import Player from "../components/Player.tsx";
-import ValProp from "../components/ValProp.astro";
-import FilterButton from "../components/FilterButton.astro";
+import ValProp from "../components/home/ValProp.astro";
+import FilterButton from "../components/home/FilterButton.astro";
 import PrimaryButton from "../components/PrimaryButton.astro";
-import CourseTile from "../components/CourseTile.astro";
+import CourseTile from "../components/home/CourseTile.astro";
 import { themeColors } from "../utils/colors.ts";
 
 const skills = [
@@ -56,6 +56,7 @@ const courseItems = await courses.all();
 <MainLayout title="Home">
   <Section append={themeColors("primary")}>
     <h1>LEARN PROGRAMMING BY BUILDING REAL APPS STEP BY STEP</h1>
+    <p class="text-secondary dark:text-white">Easy and fun step-by-step Tutorials + Courses for junior to advanced developers.</p>
   </Section>
   <Separator
     appendOuter={themeColors("primary")}
@@ -64,9 +65,9 @@ const courseItems = await courses.all();
   />
   <Section append={themeColors("accent")}>
     <div class="text-center grid lg:grid-cols-3 gap-4">
-      <ValProp vals="Join|13,000|fellow students" />
-      <ValProp vals="Join|13,000|fellow students" />
-      <ValProp vals="Join|13,000|fellow students" />
+      <ValProp vals="Join|13,200+|fellow students" />
+      <ValProp vals="Watch|20+|hours of free videos" />
+      <ValProp vals="Read|15|tutorials" />
     </div>
   </Section>
   <Separator
@@ -124,11 +125,11 @@ const courseItems = await courses.all();
     clipPath="polygon(0 60%, 100% 100%, 100% 100%, 0 100%);"
   />
   <Section append={themeColors("accent")}>
-    <h2 class="text-center mt-6">WHY OUR COURSES ROCK</h2>
+    <h2 class="text-center mt-6 mb-8">WHY OUR COURSES ROCK</h2>
     <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-12 p-4">
       {whyRocks.map((v) => <li>{v}</li>)}
     </div>
-    <h2 class="mt-16 text-center">Popular Courses</h2>
+    <h2 class="mt-16 text-center mb-8">Popular Courses</h2>
     <center>
       <div class="flex flex-col gap-12">
         {[courseItems[0], courseItems[1]].map((c) => <a href=`/courses/${c.slug.current}`><CourseTile course={c} /></a>)}     
@@ -139,16 +140,16 @@ const courseItems = await courses.all();
     </div>
   </Section>
   <Separator
-    appendOuter={themeColors("secondary")}
+    appendOuter={themeColors("base")}
     appendInner={themeColors("accent")}
     clipPath="polygon(0 0, 100% 0, 100% 30%, 0 0);"
   />
-  <Section append={themeColors("secondary")}>
+  <Section append={themeColors("base")}>
     <h2 class="text-center">YOUR INSTRUCTOR</h2>
     <img src="https://fluttercrashcourse.global.ssl.fastly.net/uploads/nick-pace-5.jpg" class="mr-8 mb-4 float-left" style="width:400px;" />
     <!-- TODO convert to markdown -->
     <p class="my-5">Hi there! I am Nick Manning, your instructor.</p>
-    <p class="my-5">I have had a passion for programming ever since I can remember - coppying code into my notebook with a pencil in my free time:)</p>
+    <p class="my-5">I have had a passion for programming ever since I can remember - copying code into my notebook with a pencil in my free time:)</p>
     <p class="my-5">The past 19 years of my life has been an exciting journey of working as technical lead, Director of Mobile and CTO at various amazing companies, including such global brands as Adidas, Reebok and Louis Vuitton and a now-Trip-Advisor-acquired company.</p>
     <p class="my-5">Over the years I have co-founded various startups one of which was a participant at the Techstars accelerator.</p>
     <p class="my-5">I regularly post cool content on Youtube - so make sure to head over and subscribe. If you prefer reading, I also have a blog. You can also say hi on Twitter.</p>
@@ -158,10 +159,10 @@ const courseItems = await courses.all();
     </div>
   </Section>
   <Section append={themeColors("tertiary")}>
-    <h4 class="text-primary">Nick on TWITTER</h4>
+    <h4 class="text-primary mb-4">Nick on TWITTER</h4>
     <p>The latest mini-project I've whipped up today. Super fast "full texdt searching" using @supabase and a simple search experience with @FlutterDev. Code walkthrough coming this week at <a href="https://twitter.com/seenickcode" target="_blank">@seenickcode</a></p>
     <p class="border-solid border-b-2 border-primary mt-4 mb-8">&nbsp;</p>
-    <h4 class="text-primary">Nick on YOUTUBE</h4>
+    <h4 class="text-primary mb-4">Nick on YOUTUBE</h4>
     <div class="flex flex-row gap-12">
       <!-- <iframe width="300" src="https://www.youtube.com/embed/_7qv9zHEgTc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
       <div>
@@ -170,8 +171,8 @@ const courseItems = await courses.all();
       </div>
     </div>
     <p class="border-solid border-b-2 border-primary mt-4 mb-8">&nbsp;</p>
-    <h4 class="text-primary">Latest on the BLOG</h4>
-    <h5>WebViews in Flutter</h5>
+    <h4 class="text-primary mb-4">Latest on the BLOG</h4>
+    <h5 class="mb-4">WebViews in Flutter</h5>
     <p>Let’s start coding a simple form, using a MaterialApp widget. Forms are an essential feature for almost any mobile app. There are two major types of forms, one is for something like sign up or some onboarding flow and another is more of a utility, such as a settings or an update profile screen.</p>
   </Section>
 </MainLayout>

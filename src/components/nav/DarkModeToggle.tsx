@@ -8,11 +8,14 @@ export default class DarkModeToggle extends Component<{}, State> {
   constructor(props) {
     super(props);
 
-    const val = localStorage.getItem("dark-mode");
+    let val = localStorage.getItem("dark-mode");
+
+    if (!val && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      val = "1";
+    }
 
     this.state = {
-      on:
-        val == "1" || window.matchMedia("(prefers-color-scheme: dark)").matches,
+      on: val == "1",
     };
   }
 
@@ -23,7 +26,8 @@ export default class DarkModeToggle extends Component<{}, State> {
       document.documentElement.classList.remove("dark");
     }
 
-    localStorage.setItem("dark-mode", on ? "1" : "");
+    localStorage.setItem("dark-mode", on ? "1" : "0");
+    console.log("val is now", localStorage.getItem("dark-mode"));
   };
 
   toggle = (e) => {

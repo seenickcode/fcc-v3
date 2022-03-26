@@ -2,7 +2,7 @@
 import MainLayout from "../../layouts/MainLayout.astro";
 import { sanity } from "/src/lib/db.ts";
 import type { Post } from "/cms/schema.ts";
-import Section from "../../layouts/PageContentWrapper.astro";
+import Section from "../../components/PageContentWrapper.astro";
 import BlockContent from "../../components/BlockContent.tsx"
 import { themeColors } from "/src/utils/colors.ts";
 
@@ -16,9 +16,9 @@ const post = await sanity.fetch<Post>(`*[_type == 'post' && slug.current == '${s
 ---
 
 <MainLayout title={post.title}>
-  <Section append={themeColors("secondary")}>
+  <Section append={themeColors("base")}>
     <BlockContent
-      content={post.body}
+      markdown={post.body}
       client:only="react"
     />
   </Section>
