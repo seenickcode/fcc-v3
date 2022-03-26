@@ -17,7 +17,7 @@ const posts = await sanity.fetch<Post>("*[_type == 'post'] | order(_createdAt de
         <div class="flex flex-row justify-items-center content-center">
           <div><img src={p.mainImage ? urlFor(p.mainImage).width(200).fit('crop').url() : ""} class="" /></div>
           <div>&nbsp;</div>
-          <div><h2 class="text-md m-0 text-accent dark:text-primary font-sans"><a href={`/blog/${p.slug.current}`}>{p.title}</a></h2></div>
+          <div><h2 class="text-md m-0 text-primaryMedium dark:text-primaryLight font-sans"><a href={`/blog/${p.slug.current}`}>{p.title}</a></h2></div>
         </div>
       ))}
     </div>

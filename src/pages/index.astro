@@ -54,16 +54,16 @@ const courseItems = await courses.all();
 ---
 
 <MainLayout title="Home">
-  <Section append={themeColors("primary")}>
+  <Section append={themeColors("base")}>
     <h1>LEARN PROGRAMMING BY BUILDING REAL APPS STEP BY STEP</h1>
-    <p class="text-secondary dark:text-white">Easy and fun step-by-step Tutorials + Courses for junior to advanced developers.</p>
+    <p class="text-primaryDark dark:text-white">Easy and fun step-by-step Tutorials + Courses for junior to advanced developers.</p>
   </Section>
   <Separator
-    appendOuter={themeColors("primary")}
-    appendInner={themeColors("accent")}
+    appendOuter={themeColors("base")}
+    appendInner={themeColors("primaryMedium")}
     clipPath="polygon(0 30%, 100% 60%, 100% 100%, 0 100%);"
   />
-  <Section append={themeColors("accent")}>
+  <Section append={themeColors("primaryMedium")}>
     <div class="text-center grid lg:grid-cols-3 gap-4">
       <ValProp vals="Join|13,200+|fellow students" />
       <ValProp vals="Watch|20+|hours of free videos" />
@@ -71,33 +71,33 @@ const courseItems = await courses.all();
     </div>
   </Section>
   <Separator
-    appendOuter={themeColors("accent")}
-    appendInner={themeColors("secondary")}
+    appendOuter={themeColors("primaryMedium")}
+    appendInner={themeColors("primaryDark")}
     clipPath="polygon(0 60%, 100% 30%, 100% 100%, 0 100%);"
   />
-  <Section append={themeColors("secondary")}>
+  <Section append={themeColors("primaryDark")}>
     <h2 class="text-right mb-12">Flutter Skills We Teach</h2>
     <div class="text-center grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
       {skills.map((v) => <FilterButton>{v}</FilterButton>)}
     </div>
   </Section>
   <Separator
-    appendOuter={themeColors("secondary")}
-    appendInner={themeColors("primary")}
+    appendOuter={themeColors("primaryDark")}
+    appendInner={themeColors("primaryLight")}
     clipPath="polygon(0 60%, 100% 30%, 100% 100%, 0 100%);"
   />
-  <Section append={themeColors("primary")}>
+  <Section append={themeColors("primaryLight")}>
     <h2 class="text-center mb-12">Community Love</h2>
     <div class="text-center grid sm:grid-cols-2 lg:grid-cols-2 gap-16">
       {reviews.map((v) => <p>{v}</p>)}
     </div>
   </Section>
   <Separator
-    appendOuter={themeColors("primary")}
-    appendInner={themeColors("secondary")}
+    appendOuter={themeColors("primaryLight")}
+    appendInner={themeColors("primaryDark")}
     clipPath="polygon(0 60%, 100% 30%, 100% 100%, 0 100%);"
   />
-  <Section append={themeColors("secondary")}>
+  <Section append={themeColors("primaryDark")}>
     <h3 class="text-right mb-8">
       Hi, I'm <span class="text-lg lg:text-3xl">Nick</span>. Watch to see <span
         class="text-lg lg:text-3xl">WHO THIS IS FOR</span
@@ -116,15 +116,15 @@ const courseItems = await courses.all();
       find courses here for your level.
     </p>
     <div class="text-right mt-12">
-      <a href="/courses"><PrimaryButton theme="primary" label="BROWSE COURSES" /></a>
+      <a href="/courses"><PrimaryButton theme="primaryLight" label="BROWSE COURSES" /></a>
     </div>
   </Section>
   <Separator
-    appendOuter={themeColors("secondary")}
-    appendInner={themeColors("accent")}
+    appendOuter={themeColors("primaryDark")}
+    appendInner={themeColors("primaryMedium")}
     clipPath="polygon(0 60%, 100% 100%, 100% 100%, 0 100%);"
   />
-  <Section append={themeColors("accent")}>
+  <Section append={themeColors("primaryMedium")}>
     <h2 class="text-center mt-6 mb-8">WHY OUR COURSES ROCK</h2>
     <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-12 p-4">
       {whyRocks.map((v) => <li>{v}</li>)}
@@ -136,12 +136,12 @@ const courseItems = await courses.all();
       </div>
     </center>
     <div class="text-center mt-20 mb-8">
-      <a href="/courses"><PrimaryButton theme="secondary" label="JUMP TO ALL COURSES" /></a>
+      <a href="/courses"><PrimaryButton theme="primaryDark" label="JUMP TO ALL COURSES" /></a>
     </div>
   </Section>
   <Separator
     appendOuter={themeColors("base")}
-    appendInner={themeColors("accent")}
+    appendInner={themeColors("primaryMedium")}
     clipPath="polygon(0 0, 100% 0, 100% 30%, 0 0);"
   />
   <Section append={themeColors("base")}>
@@ -155,14 +155,14 @@ const courseItems = await courses.all();
     <p class="my-5">I regularly post cool content on Youtube - so make sure to head over and subscribe. If you prefer reading, I also have a blog. You can also say hi on Twitter.</p>
     <p class="my-5">Learn more about me here or just...</p>  
     <div class="text-right mt-12 mb-12">
-      <a href="/courses"><PrimaryButton theme="primary" label="BROWSE COURSES" /></a>
+      <a href="/courses"><PrimaryButton theme="primaryLight" label="BROWSE COURSES" /></a>
     </div>
   </Section>
   <Section append={themeColors("tertiary")}>
-    <h4 class="text-primary mb-4">Nick on TWITTER</h4>
+    <h4 class="text-primaryLight mb-4">Nick on TWITTER</h4>
     <p>The latest mini-project I've whipped up today. Super fast "full texdt searching" using @supabase and a simple search experience with @FlutterDev. Code walkthrough coming this week at <a href="https://twitter.com/seenickcode" target="_blank">@seenickcode</a></p>
-    <p class="border-solid border-b-2 border-primary mt-4 mb-8">&nbsp;</p>
-    <h4 class="text-primary mb-4">Nick on YOUTUBE</h4>
+    <p class="border-solid border-b-2 border-primaryLight mt-4 mb-8">&nbsp;</p>
+    <h4 class="text-primaryLight mb-4">Nick on YOUTUBE</h4>
     <div class="flex flex-row gap-12">
       <!-- <iframe width="300" src="https://www.youtube.com/embed/_7qv9zHEgTc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
       <div>
@@ -170,8 +170,8 @@ const courseItems = await courses.all();
         <p>Here are my 5 tips I'd give _newcomers_ to Flutter in 2022. Save time, learn smart, find a learning path and most importantly, build something. I've been writing Watch video on Youtube</p>
       </div>
     </div>
-    <p class="border-solid border-b-2 border-primary mt-4 mb-8">&nbsp;</p>
-    <h4 class="text-primary mb-4">Latest on the BLOG</h4>
+    <p class="border-solid border-b-2 border-primaryLight mt-4 mb-8">&nbsp;</p>
+    <h4 class="text-primaryLight mb-4">Latest on the BLOG</h4>
     <h5 class="mb-4">WebViews in Flutter</h5>
     <p>Let’s start coding a simple form, using a MaterialApp widget. Forms are an essential feature for almost any mobile app. There are two major types of forms, one is for something like sign up or some onboarding flow and another is more of a utility, such as a settings or an update profile screen.</p>
   </Section>

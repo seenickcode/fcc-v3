@@ -1,19 +1,24 @@
-const primary = "bg-primary text-accent dark:bg-secondary dark:text-primary";
-const secondary = "bg-white text-secondary dark:bg-primary dark:text-accent";
-const accent = "bg-accent text-white dark:bg-secondary dark:text-primary";
-const tertiary = "bg-secondary text-accent dark:bg-secondary dark:text-primary";
+const primaryLight =
+  "bg-primaryLight text-primaryMedium dark:bg-primaryDark dark:text-primaryLight";
+const primaryDark =
+  "bg-white text-primaryDark dark:bg-primaryLight dark:text-primaryMedium";
+const primaryMedium =
+  "bg-primaryMedium text-white dark:bg-primaryDark dark:text-primaryLight";
+const tertiary =
+  "bg-primaryDark text-primaryMedium dark:bg-primaryDark dark:text-primaryLight";
 
-const base = "bg-white text-secondary dark:bg-secondary dark:text-primary";
+const base =
+  "bg-white text-primaryDark dark:bg-primaryDark dark:text-primaryLight";
 
 export function themeColors(themeName: string): string {
   return themeName == "base"
     ? base
-    : themeName == "primary"
-    ? primary
-    : themeName == "secondary"
-    ? secondary
-    : themeName == "accent"
-    ? accent
+    : themeName == "primaryLight"
+    ? primaryLight
+    : themeName == "primaryDark"
+    ? primaryDark
+    : themeName == "primaryMedium"
+    ? primaryMedium
     : themeName == "tertiary"
     ? tertiary
     : "";

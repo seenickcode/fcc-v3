@@ -36,7 +36,7 @@ export default function Player(props) {
       id="video"
       controls
       width={props.width}
-      class="border-solid border-8 border-primary dark:border-secondary dark:text-secondary"
+      class="border-solid border-8 border-primaryLight dark:border-primaryDark dark:text-primaryDark"
       poster={props.poster}
     ></video>
   );

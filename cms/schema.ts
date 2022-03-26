@@ -261,7 +261,7 @@ export interface Course extends SanityDocument {
    *
    *
    */
-  theme_accent_color?: string;
+  theme_primaryMedium_color?: string;
 
   /**
    * Lessons — `array`

@@ -56,7 +56,7 @@ export default {
       type: "string",
     },
     {
-      name: "theme_accent_color",
+      name: "theme_primaryMedium_color",
       title: "Theme Accent Color",
       type: "string",
     },

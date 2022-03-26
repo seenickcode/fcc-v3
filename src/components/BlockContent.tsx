@@ -22,7 +22,7 @@ export default function BlockContent(props) {
     },
     types: {
       image: ({ value }) => (
-        <div className="border-solid border-primary border-8 my-8">
+        <div className="border-solid border-primaryLight border-8 my-8">
           <img src={urlFor(value)} />
         </div>
       ),

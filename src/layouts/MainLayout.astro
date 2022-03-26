@@ -49,14 +49,14 @@ const { title, description } = Astro.props;
     <div class="flex flex-col">
       <!-- colored full width container -->
       <div
-        class="w-full flex flex-col items-center bg-primary text-white dark:bg-secondary dark:text-primary"
+        class=`w-full flex flex-col items-center ${themeColors("base")}`
       >
         <!-- sub content container with a max width -->
         <div
           class="w-full max-w-[1080px] flex flex-row flex-wrap justify-between px-5 py-8"
         >
           <a href="/"><Logo /></a>
-          <div class="flex flex-col flex-wrap items-end space-y-4 text-accent">
+          <div class="flex flex-col flex-wrap items-end space-y-4 text-primaryMedium">
             <div>
               <!-- placeholder to avoid layout moving -->
               <span>&nbsp;</span>
@@ -69,7 +69,7 @@ const { title, description } = Astro.props;
       <div class="h-screen">
         <!-- TODO consider footer https://stackoverflow.com/questions/65976223/how-to-use-calc-in-tailwind-css -->
         <slot />
-        <PageContentWrapper append={themeColors("primary")}>
+        <PageContentWrapper append={themeColors("primaryLight")}>
           <p></p>
         </PageContentWrapper>
       </div>

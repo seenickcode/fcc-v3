@@ -4,7 +4,7 @@ import type { Page } from "/cms/schema.ts";
 
 const pages = await sanity.fetch<Page[]>("*[_type == 'page']  | order(order asc) {slug, name}");
 ---
-<div class="flex flex-row flex-wrap justify-end space-x-10 nav text-accent">
+<div class="flex flex-row flex-wrap justify-end space-x-10 nav text-primaryMedium">
   <!-- <div><a href="/courses/">Courses</a></div> -->
   <div><a href="/blog/">Tutorials</a></div>
   {pages.map((p) => <div><a href="/${p.slug.current}/">{p.name}</a></div>)}

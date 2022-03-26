@@ -3,17 +3,19 @@ module.exports = {
     "./public/**/*.html",
     "./src/**/*.{astro,js,jsx,svelte,ts,tsx,vue}",
   ],
-  // plugins: [require("@themesberg/flowbite/plugin")],
   darkMode: "class",
   theme: {
     extend: {
       colors: {
-        primary: "#ADA5FF", // light purple
-        secondary: "#1A1640", // dark purple
-        accent: "#4E44AF", // medium purple
+        primaryLight: "#ADA5FF", // light purple
+        primaryMedium: "#4E44AF", // medium purple
+        primaryDark: "#1A1640", // dark purple
       },
       fontFamily: {
-        ZenDots: ["Zen Dots"],
+        // ZenDots: ["Zen Dots"],
+        sans: ["Helvetica", "Arial", "sans-serif"],
+        serif: ["ui-serif", "Georgia"],
+        mono: ["Courier New"],
       },
     },
   },
